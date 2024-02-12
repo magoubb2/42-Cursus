@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
+/*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 11:22:02 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/11 15:24:17 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/02/12 11:27:15 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void *ft_memmove(void *dest, const void *src, size_t len)
             i--;
         }
     }
-    else 
+    else
     {
         i = 0;
         while (i < len)
@@ -55,8 +55,8 @@ void *ft_memmove(void *dest, const void *src, size_t len)
 //     char src[] = "yolos";
 //     size_t n = 10;
 //     char *str = ft_memmove((void *)dest, (const void *)src, n);
-//     char *str1 = memmove((void *)dest, (const void *)src, n);
+//     // char *str1 = memmove((void *)dest, (const void *)src, n);
 
 //     printf("%s\n", str);
-//     printf("%s\n", str1);
+//     // printf("%s\n", str1);
 // }

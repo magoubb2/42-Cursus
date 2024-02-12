@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
+/*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 15:03:54 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/06 15:07:47 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/02/12 11:27:08 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

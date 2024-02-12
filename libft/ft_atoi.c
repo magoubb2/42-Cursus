@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
+/*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 00:06:37 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/10 14:58:32 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/02/12 11:27:07 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

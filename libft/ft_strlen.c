@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
+/*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 15:24:23 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/08 14:02:46 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/02/12 11:27:19 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
+/*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 12:01:04 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/09 12:02:18 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/02/12 13:13:28 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,14 @@ int ft_strncmp(char *s1, const char *s2, size_t n)
 		i++;
 	if (i == n)
 		return (0);
-	return (s1[i] - s2[i]);
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
+
+// int main(void)
+// {
+// 	char str[] = "\200";
+// 	char str1[] = "\0";
+
+// 	printf("mine: %i\n", ft_strncmp(str, str1,1));
+// 	printf("real: %i\n", strncmp(str, str1, 1));
+// }

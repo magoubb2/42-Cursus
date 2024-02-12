@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
+/*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 11:02:21 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/10 15:06:02 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/02/12 11:27:14 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

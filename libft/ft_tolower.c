@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
+/*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 15:18:09 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/08 15:18:48 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/02/12 11:27:23 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

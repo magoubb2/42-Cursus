@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
+/*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 15:29:50 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/07 09:58:41 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/02/12 11:27:15 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

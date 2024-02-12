@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
+/*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 15:11:28 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/10 00:05:10 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/02/12 14:32:40 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,10 @@ char *ft_strnstr(const char *haystack, const char *needle, size_t len)
     const char *n;
     const char *h;
 
+    if (needle[0] == '\0' && len == 0)
+        return ((char *)haystack);
+    if (haystack[0] == '\0' && needle[0] == '\0')
+        return ((char *)haystack);
     while (*haystack && len)
     {
         h = haystack;
@@ -36,19 +40,11 @@ char *ft_strnstr(const char *haystack, const char *needle, size_t len)
 }
 
 // int main() {
-//     const char *haystack = "Hello,lol lol world! lol ";
-//     const char *needle = "";
-//     size_t len = 13; // Length of haystack excluding null terminator
+//     const char haystack[30] = "aaabcabcd";
+//     const char *needle;
+//     size_t len = 20; // Length of haystack excluding null terminator
 
-//     // Call ft_strnstr
-//     char *result = ft_strnstr(haystack, needle, len);
-
-//     // Check if needle was found
-//     if (result != NULL) {
-//         printf("'%s' found at index %ld in '%s'\n", needle, result - haystack, haystack);
-//     } else {
-//         printf("'%s' not found in '%s'\n", needle, haystack);
-//     }
-
+//     printf("mine: %s\n", ft_strnstr(haystack, "abcd", 9));
+//     printf("real: %s\n", strnstr(haystack, "abcd", 9));
 //     return 0;
 // }

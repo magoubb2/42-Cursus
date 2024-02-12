@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
+/*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 15:18:33 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/07 14:27:01 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/02/12 11:27:12 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

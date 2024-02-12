@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
+/*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 14:38:05 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/06 14:40:49 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/02/12 11:27:10 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
