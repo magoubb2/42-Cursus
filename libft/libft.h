@@ -6,7 +6,7 @@
 /*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 13:25:50 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/13 12:11:23 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/02/13 13:19:30 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,7 @@ size_t	ft_strlen(const char *str);
 size_t	ft_strlcpy(char *dst, const char *src, size_t destsize);
 size_t	ft_strlcat(char *dest, const char *src, size_t destsize);
 int		ft_strncmp(char *s1, const char *s2, size_t n);
+void	*ft_calloc(size_t count, size_t size);
+
 
 #endif
