@@ -52,9 +52,7 @@ char *ft_strnstr(const char *haystack, const char *needle, size_t len)
     return (NULL);
 }
 
-// int main() {
-
-    
+// int main() {    
 //     printf("mine: %s\n", ft_strnstr("aaabcabcd", "abcd", 8));
 //     printf("real: %s\n", strnstr("aaabcabcd", "abcd", 8));
 //     return 0;
