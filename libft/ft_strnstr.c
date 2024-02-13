@@ -1,3 +1,4 @@
+
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -6,7 +7,7 @@
 /*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 15:11:28 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/12 14:32:40 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/02/12 14:40:52 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +24,14 @@ char *ft_strnstr(const char *haystack, const char *needle, size_t len)
         return ((char *)haystack);
     while (*haystack && len)
     {
+        if (len < ft_strlen(needle))
+            return (NULL);
         h = haystack;
         n = needle;
-        while (*h == *n && *n != '\0' && len)
+        while (*h == *n && *n && *h && len)
         {
             h++;
             n++;
-            len--;
         }
         if (*n == '\0')
             return ((char *)haystack);
@@ -40,11 +42,9 @@ char *ft_strnstr(const char *haystack, const char *needle, size_t len)
 }
 
 // int main() {
-//     const char haystack[30] = "aaabcabcd";
-//     const char *needle;
-//     size_t len = 20; // Length of haystack excluding null terminator
 
-//     printf("mine: %s\n", ft_strnstr(haystack, "abcd", 9));
-//     printf("real: %s\n", strnstr(haystack, "abcd", 9));
+    
+//     printf("mine: %s\n", ft_strnstr("aaabcabcd", "abcd", 8));
+//     printf("real: %s\n", strnstr("aaabcabcd", "abcd", 8));
 //     return 0;
 // }
