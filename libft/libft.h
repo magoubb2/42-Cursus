@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
+/*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 13:25:50 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/13 16:20:55 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/02/14 12:53:09 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ size_t	ft_strlcat(char *dest, const char *src, size_t destsize);
 int		ft_strncmp(char *s1, const char *s2, size_t n);
 void	*ft_calloc(size_t count, size_t size);
 char    *ft_strdup(const char *s1);
-
+char	*ft_substr(char const *s, unsigned int start, size_t len);
 
 
 #endif
