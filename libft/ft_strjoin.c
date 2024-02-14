@@ -1,0 +1,46 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/14 14:37:19 by marbaron          #+#    #+#             */
+/*   Updated: 2024/02/14 15:21:53 by marbaron         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+char *ft_strjoin(char const *s1, char const *s2)
+{
+	int i;
+	int j;
+	char *full_str;
+	int full_len;
+	int len_s1;
+
+	i = 0;
+	j = 0;
+	len_s1 = ft_strlen(s1);
+	full_len = ft_strlen(s1) + ft_strlen(s2);
+	full_str = (char *)malloc(sizeof(char) * full_len);
+	if (!full_str)
+		return (NULL);
+	while (s1[i])
+	{
+		full_str[i] = s1[i];
+		i++;
+	}
+	if (!s1[i])
+	{
+		while (s2[j])
+			full_str[i++] = s2[j++];
+	}
+	return (full_str);
+}
+
+int main(void)
+{
+	printf("%s\n", ft_strjoin("lorem ipsum", "dolor sit amet"));
+}
