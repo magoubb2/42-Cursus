@@ -32,5 +32,5 @@ char *ft_strtrim(char const *s1, char const *set)
 
 // int main(void)
 // {
-// 	printf("%s\n", ft_strtrim("abc hello  world abc  lol", "abc "));
+// 	printf("%s\n", ft_strtrim("abc hello  world abc  lol", "abc"));
 // }
