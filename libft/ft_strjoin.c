@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
+/*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 14:37:19 by marbaron          #+#    #+#             */
-/*   Updated: 2024/02/14 15:21:53 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/02/15 10:47:34 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,11 @@ char *ft_strjoin(char const *s1, char const *s2)
 
 	i = 0;
 	j = 0;
+	if (s1 == NULL || s2 == NULL)
+		return (0);
 	len_s1 = ft_strlen(s1);
 	full_len = ft_strlen(s1) + ft_strlen(s2);
-	full_str = (char *)malloc(sizeof(char) * full_len);
+	full_str = (char *)malloc(sizeof(char) * full_len + 1);
 	if (!full_str)
 		return (NULL);
 	while (s1[i])
@@ -32,15 +34,18 @@ char *ft_strjoin(char const *s1, char const *s2)
 		full_str[i] = s1[i];
 		i++;
 	}
-	if (!s1[i])
-	{
-		while (s2[j])
-			full_str[i++] = s2[j++];
-	}
+	while (s2[j])
+		full_str[i++] = s2[j++];
+	full_str[i] = '\0';
 	return (full_str);
 }
 
-int main(void)
-{
-	printf("%s\n", ft_strjoin("lorem ipsum", "dolor sit amet"));
-}
+// int main(void)
+// {
+// 	char *strjoin;
+// 	const char s1[] = "hello";
+// 	const char s2[] = "world";
+
+// 	strjoin = ft_strjoin(s1, s2);
+// 	printf("%s\n", strjoin);
+// }

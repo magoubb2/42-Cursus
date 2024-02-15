@@ -21,6 +21,12 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 
 	i = 0;
 	j = 0;
+	if (ft_strlen(s) < len)
+		len = ft_strlen(s);
+	if (start >= ft_strlen(s))
+		start = ft_strlen(s);
+	if (!s)
+		return (NULL);
 	sub_str = (char *)malloc((sizeof(char)) * (len + 1));
 	if (!sub_str)
 		return (NULL);
@@ -38,6 +44,7 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 // int main(void)
 // {
 // 	// printf("%s\n", ft_substr("hello world", 5, 5));
-// 	printf("%s\n", ft_substr("hello world", 20, 7));
+// 	printf("%s\n", ft_substr("", 1, 1));
 // 	// printf("%s\n", ft_substr("lorem ipsum dolor sit amet", 400, 20));
 // }
+
