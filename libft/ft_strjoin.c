@@ -6,12 +6,15 @@
 /*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 14:37:19 by marbaron          #+#    #+#             */
-/*   Updated: 2024/02/15 10:47:34 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/02/17 11:01:43 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+// Allocate space for the concatenation of the two strings (s1) and (s2). Then,
+// we copy the first string in the new variable (new_str) and then once this
+// is done, we start copying the seond one in the (new_str).
 char *ft_strjoin(char const *s1, char const *s2)
 {
 	int i;

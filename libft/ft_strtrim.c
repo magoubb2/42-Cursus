@@ -6,12 +6,18 @@
 /*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 15:26:05 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/16 14:05:37 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/02/17 12:05:35 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+// 1). Find the position of (start) by skiping (set) using ft_strchr.
+// 2). Find the position of (end) by starting end at the end of (s1) and then
+//	   skiping (set) using ft_strchr.
+// 3). Allocate space for the (new_str) by substracting (start) to (end).
+// 4). Copy from (s1[start]) to (new_str[i]).
+// 5). return (new_str).
 char *ft_strtrim(char const *s1, char const *set)
 {
 	int i;

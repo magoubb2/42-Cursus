@@ -6,7 +6,7 @@
 /*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 14:10:15 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/16 19:58:06 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/02/17 12:06:59 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,13 +76,13 @@ char **ft_split(const char *s, char c)
 //     printf("count word: %i\n", count_wd("hello world", ' '));
 // }
 
-// int	main(void)
-// {
-// 	char	**split = ft_split("lol lmao", ' ');
-// 	int i = 0;
-// 	while (split[i])
-// 	{
-// 		printf("%s\n", split[i]);
-// 		i++;
-// 	}
-// }
+int	main(void)
+{
+	char	**split = ft_split("lol lmao", ' ');
+	int i = 0;
+	while (split[i])
+	{
+		printf("%s\n", split[i]);
+		i++;
+	}
+}

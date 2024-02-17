@@ -13,6 +13,7 @@
 
 #include "libft.h"
 
+// allocate space to copy a copy of the (s1) string. And then returns it.
 char *ft_strdup(const char *s1)
 {
 	size_t s1_len;
