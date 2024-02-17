@@ -6,11 +6,17 @@
 /*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 14:10:15 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/17 12:06:59 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/02/17 14:34:24 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+// 1). Find the number of words in (s).
+// 2). With the number of words we can allocate the number of arrays we are
+//     gonna need.
+// 3). Then we are going to copy the current word in (new_str) using substr.
+char **ft_split(const char *s, char c);
 
 static int count_wd(char *str, char c)
 {
@@ -69,12 +75,6 @@ char **ft_split(const char *s, char c)
     d_tab[index] = NULL;
     return (d_tab);
 }
-
-// int main(void)
-// {
-//     printf("%s\n", (char *)ft_split("hello world world", ' '));
-//     printf("count word: %i\n", count_wd("hello world", ' '));
-// }
 
 int	main(void)
 {
