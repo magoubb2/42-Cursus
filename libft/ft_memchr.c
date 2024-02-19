@@ -6,28 +6,28 @@
 /*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 12:10:05 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/12 11:27:13 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/02/19 14:56:22 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memchr(const void *s, int c, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-    size_t i;
-    unsigned char character;
-    const unsigned char *str;
-    
-    i = 0;
-    character = c;
-    str = s;
-    while (i < n)
-    {
-        if (str[i] == character)
-            return ((void *) &s[i]);
-        i++;   
-    }
-    return (0);
+	size_t				i;
+	unsigned char		character;
+	const unsigned char	*str;
+
+	i = 0;
+	character = c;
+	str = s;
+	while (i < n)
+	{
+		if (str[i] == character)
+			return ((void *) &s[i]);
+		i++;
+	}
+	return (0);
 }
 
 // int main() {
@@ -39,7 +39,7 @@ void *ft_memchr(const void *s, int c, size_t n)
 //     void *ptr = ft_memchr(str, character, n);
 
 //     if (ptr != NULL) {
-//         printf("Found '%c' at position: %ld\n", character, (char *)ptr - str);
+//         printf("Found '%c' at pos: %ld\n", character, (char *)ptr - str);
 //     } else {
 //         printf("Character not found.\n");
 //     }

@@ -6,7 +6,7 @@
 /*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 11:22:02 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/12 11:27:15 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/02/19 15:16:53 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,37 +17,33 @@
 // destination memory block d. And if the destination memory block d ends
 // before the end of the source memory block s. if these two are true then
 // we copie starting from the end of s.
-void *ft_memmove(void *dest, const void *src, size_t len)
+void	*ft_memmove(void *dest, const void *src, size_t len)
 {
-    size_t i;
-    const char *s;
-    char *d;
-    
-    if (!src && !dest)
-        return (NULL);
-    s = src;
-    d = dest;
-    if (s < d && (s + len) > d)
-    {
-        i = len;
-        while (i > 0)
-        {
-            d[i - 1] = s[i - 1];
-            i--;
-        }
-    }
-    else
-    {
-        i = 0;
-        while (i < len)
-        {
-            d[i] = s[i];
-            i++;
-        }
-    }
-    return (dest);
-}
+	size_t		i;
+	const char	*s;
+	char		*d;
 
+	if (!src && !dest)
+		return (NULL);
+	s = src;
+	d = dest;
+	if (s < d && (s + len) > d)
+	{
+		i = len;
+		while (i > 0)
+		{
+			d[i - 1] = s[i - 1];
+			i--;
+		}
+	}
+	else
+	{
+		i = -1;
+		while (++i < len)
+			d[i] = s[i];
+	}
+	return (dest);
+}
 
 // int main(void)
 // {

@@ -1,4 +1,3 @@
-
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -7,17 +6,17 @@
 /*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 17:14:25 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/14 13:07:12 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/02/19 15:01:06 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t i;
-	size_t j;
-	char *sub_str;
+	size_t	i;
+	size_t	j;
+	char	*sub_str;
 
 	i = 0;
 	j = 0;
@@ -47,4 +46,3 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 // 	printf("%s\n", ft_substr("", 1, 1));
 // 	// printf("%s\n", ft_substr("lorem ipsum dolor sit amet", 400, 20));
 // }
-

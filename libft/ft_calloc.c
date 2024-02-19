@@ -1,4 +1,3 @@
-
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -6,17 +5,17 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/13 12:13:41 by marbaron          #+#    #+#             */
-/*   Updated: 2024/02/13 12:14:13 by marbaron         ###   ########.fr       */
+/*   Created: 2024/02/19 14:37:09 by marbaron          #+#    #+#             */
+/*   Updated: 2024/02/19 14:37:22 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_calloc(size_t count, size_t size)
+void	*ft_calloc(size_t count, size_t size)
 {
-	size_t byte_size;
-	size_t *ptr;
+	size_t	byte_size;
+	size_t	*ptr;
 
 	byte_size = count * size;
 	ptr = (void *)malloc((byte_size));
@@ -30,7 +29,6 @@ void *ft_calloc(size_t count, size_t size)
 // {
 // 	int *ptr;
 // 	int *ptr1;
-
 // 	// ptr = calloc(1, 1);
 // 	// ptr1 = ft_calloc(1, 1);
 // 	ptr = calloc(1, 1);

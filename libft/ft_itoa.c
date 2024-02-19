@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
+/*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 17:14:08 by marbaron          #+#    #+#             */
-/*   Updated: 2024/02/18 17:56:57 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/02/19 14:56:03 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int len_n(int nb)
+static int	len_n(int nb)
 {
-	int len;
-	
+	int	len;
+
 	len = 0;
 	if (nb <= 0)
 		len++;
@@ -27,10 +27,10 @@ static int len_n(int nb)
 	return (len);
 }
 
-char *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-	int len;
-	char *str;
+	int		len;
+	char	*str;
 
 	len = len_n(n);
 	str = malloc(sizeof(char) * (len + 1));
@@ -49,7 +49,7 @@ char *ft_itoa(int n)
 		if (str[0] == '-' && n < 0)
 			str[len--] = '0' - ((n % 10));
 		else
-		 	str[len--] = '0' + (n % 10);
+			str[len--] = '0' + (n % 10);
 		n = n / 10;
 	}
 	return (str);

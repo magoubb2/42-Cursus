@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
+/*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 15:26:05 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/17 12:05:35 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/02/19 14:53:29 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@
 // 3). Allocate space for the (new_str) by substracting (start) to (end).
 // 4). Copy from (s1[start]) to (new_str[i]).
 // 5). return (new_str).
-char *ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	int i;
-	int start;
-	int end;
-	int str_len;
-	char *new_str;
+	int		i;
+	int		start;
+	int		end;
+	int		str_len;
+	char	*new_str;
 
 	start = 0;
 	end = ft_strlen(s1);
@@ -41,7 +41,6 @@ char *ft_strtrim(char const *s1, char const *set)
 	new_str[i] = '\0';
 	return (new_str);
 }
-
 
 // int main(void)
 // {

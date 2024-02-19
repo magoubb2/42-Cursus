@@ -6,7 +6,7 @@
 /*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 15:29:50 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/12 11:27:15 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/02/19 14:56:52 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,21 +18,21 @@
 // 2). int value: The value to be set. 3). num: The number of bytes to be set
 // to the value. We initialize two new variable of type unsigned char, ptr
 // and value. We to copy the value on every position inside of the array.
-void *ft_memset(void *b, int c, size_t len)
+void	*ft_memset(void *b, int c, size_t len)
 {
-    size_t i;
-    unsigned char *ptr;
-    unsigned char value;
-    
-    i = 0;
-    value = (unsigned char)c;
-    ptr = b;
-    while (i < len)
-    {
-        ptr[i] = value; 
-        i++;
-    }
-    return b;
+	size_t			i;
+	unsigned char	*ptr;
+	unsigned char	value;
+
+	i = 0;
+	value = (unsigned char)c;
+	ptr = b;
+	while (i < len)
+	{
+		ptr[i] = value;
+		i++;
+	}
+	return (b);
 }
 
 // int main(void)

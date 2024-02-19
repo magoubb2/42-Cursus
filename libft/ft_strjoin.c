@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
+/*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 14:37:19 by marbaron          #+#    #+#             */
-/*   Updated: 2024/02/17 11:01:43 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/02/19 14:49:22 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 // Allocate space for the concatenation of the two strings (s1) and (s2). Then,
 // we copy the first string in the new variable (new_str) and then once this
 // is done, we start copying the seond one in the (new_str).
-char *ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int i;
-	int j;
-	char *full_str;
-	int full_len;
-	int len_s1;
+	int		i;
+	int		j;
+	char	*full_str;
+	int		full_len;
+	int		len_s1;
 
 	i = 0;
 	j = 0;
