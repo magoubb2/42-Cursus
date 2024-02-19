@@ -6,7 +6,7 @@
 /*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 13:25:50 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/19 11:57:29 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/02/19 12:29:59 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ char	*ft_strtrim(char const *s1, char const *set);
 char    **ft_split(const char *s, char c);
 char	*ft_itoa(int n);
 char    *ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void    ft_striteri(char *s, void (*f)(unsigned int, char*));
+
 
 
 #endif
