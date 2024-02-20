@@ -6,7 +6,7 @@
 /*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 12:42:38 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/19 14:45:50 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/02/20 11:52:30 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,3 +24,9 @@ void	ft_putendl_fd(char *s, int fd)
 	}
 	write(fd, "\n", 1);
 }
+// int main(int argc, char **argv)
+// {
+//     (void)argc;
+//     ft_putnbr_fd(-12345, (int)atoi(*argv));
+//     ft_putstr_fd("hello", open("test_fd", O_WRONLY));
+// }
