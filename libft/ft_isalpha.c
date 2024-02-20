@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
+/*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 14:21:29 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/19 14:38:47 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/02/20 18:05:13 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

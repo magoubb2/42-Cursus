@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+         #
+#    By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/06 13:25:59 by margueriteb       #+#    #+#              #
-#    Updated: 2024/02/19 15:09:01 by marbaron         ###   ########.fr        #
+#    Updated: 2024/02/20 18:13:06 by margueriteb      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,22 +20,22 @@ SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 	
 
 OBJS = ${SRCS:.c=.o}
-
+ 
 NAME = libft.a
-
-CC = gcc
-
-CFLAG = -Wall -Werror -Wextra
-
-all: ${NAME}
-
+ 
+CC	 = gcc
+ 
+CFLAGS = -Wall -Wextra -Werror
+ 
+all	: ${NAME}
+ 
 ${NAME}: ${OBJS}
-	@ar -rcs ${NAME} ${OBJS}
-
-clean: 
-	@rm -f ${OBJS}
-
-fclean: clean
-	@rm -f ${NAME}
-
-re: fclean all
+					@ar -rcs  ${NAME} ${OBJS}
+ 
+clean  :  
+					@rm -f ${OBJS}
+ 
+fclean : clean
+					@rm -f ${NAME}
+ 
+re     : fclean all

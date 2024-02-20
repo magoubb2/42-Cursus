@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
+/*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 11:02:21 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/19 14:41:55 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/02/20 16:51:09 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,13 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	return (dest);
 }
 
-// int main(void)
-// {
-//     const char src[] = "hello world";
-//     char dest[20];
+int main(void)
+{
+    const char src[] = "hello world";
+    char dest[20];
 
-//     ft_memcpy(dest, src, sizeof(src));
-//     printf("mine: %s\n", dest);
-//     ft_memcpy(dest, src, sizeof(src));
-//     printf("real: %s\n", dest);
-// }
+    // ft_memcpy(dest, NULL, sizeof(src));
+    // printf("mine: %s\n", dest);
+    memcpy(dest, NULL, sizeof(src));
+    printf("real: %s\n", dest);
+}

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
+/*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 15:26:05 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/19 16:59:51 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/02/20 18:14:56 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,8 @@
 // 5). return (new_str).
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int		i;
 	int		start;
 	int		end;
-	int		str_len;
-	char	*new_str;
 
 	start = 0;
 	end = ft_strlen(s1);
