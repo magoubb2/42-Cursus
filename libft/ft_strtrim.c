@@ -6,7 +6,7 @@
 /*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 15:26:05 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/19 14:53:29 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/02/19 16:59:51 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		start++;
 	while (end > start && ft_strchr(set, s1[end]))
 		end--;
-	new_str = (char *)malloc(sizeof(char) * (end - start) + 2);
-	if (!new_str)
-		return (NULL);
-	i = 0;
-	while (start <= end)
-		new_str[i++] = s1[start++];
-	new_str[i] = '\0';
-	return (new_str);
+	return (ft_substr(s1, start, (end - start) + 1));
 }
 
 // int main(void)

@@ -6,7 +6,7 @@
 /*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 14:10:15 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/19 14:58:52 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/02/19 18:32:40 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,20 @@ static int	w_len(char *str, char c, int i)
 	return (len);
 }
 
+static char	**free_tab(char **tab)
+{
+	int	i;
+
+	i = 0;
+	while (tab[i])
+	{
+		free(tab[i]);
+		i++;
+	}
+	free(tab);
+	return (NULL);
+}
+
 char	**ft_split(const char *s, char c)
 {
 	char	**d_tab;
@@ -60,7 +74,7 @@ char	**ft_split(const char *s, char c)
 	index = 0;
 	if (!s)
 		return (NULL);
-	d_tab = malloc(sizeof(char *) * (count_wd((char *)s, c) + 1));
+	d_tab = ft_calloc(sizeof(char *), (count_wd((char *)s, c) + 1));
 	if (!d_tab)
 		return (NULL);
 	while (i < ft_strlen(s))
@@ -68,6 +82,8 @@ char	**ft_split(const char *s, char c)
 		if ((((i == 0 && s[i] != c) || (s[i] != c && s[i - 1] == c))))
 		{
 			d_tab[index] = ft_substr(s, i, w_len((char *)s, c, i + 1) + 1);
+			if (!d_tab[index])
+				return (free_tab (d_tab));
 			index++;
 		}
 		i++;
@@ -78,7 +94,7 @@ char	**ft_split(const char *s, char c)
 
 // int	main(void)
 // {
-// 	char	**split = ft_split("lol lmao", ' ');
+// 	char	**split = ft_split("hello!zzzzz", 'z');
 // 	int i = 0;
 // 	while (split[i])
 // 	{

@@ -6,7 +6,7 @@
 /*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 17:14:25 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/19 15:01:06 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/02/19 16:53:32 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	i = 0;
 	j = 0;
-	if (ft_strlen(s) < len)
-		len = ft_strlen(s);
-	if (start >= ft_strlen(s))
-		start = ft_strlen(s);
 	if (!s)
 		return (NULL);
-	sub_str = (char *)malloc((sizeof(char)) * (len + 1));
+	if (start >= ft_strlen(s))
+		start = ft_strlen(s);
+	if (ft_strlen(s) - start < len)
+		len = ft_strlen(s) - start;
+	sub_str = malloc((sizeof(char)) * (len + 1));
 	if (!sub_str)
 		return (NULL);
 	i = start;
@@ -43,6 +43,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 // int main(void)
 // {
 // 	// printf("%s\n", ft_substr("hello world", 5, 5));
-// 	printf("%s\n", ft_substr("", 1, 1));
+	// printf("%s\n", ft_substr("hola", 4294967295, 18446744073709551615ull));
 // 	// printf("%s\n", ft_substr("lorem ipsum dolor sit amet", 400, 20));
 // }
