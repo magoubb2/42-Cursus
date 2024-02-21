@@ -6,7 +6,7 @@
 /*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 10:59:54 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/21 14:41:32 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/02/21 14:43:03 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ char *read_from_fd(int fd, char *str)
     char    buffer[BUFFER_SIZE + 1];
     int     byte;
 
+    byte = 1;
     // Loop until you find a newline and byte is not 0.
     while (!ft_strchr(str, '\n') && byte != 0)
     {
