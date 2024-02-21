@@ -2,7 +2,7 @@
 
 >This is a repository of all of my 42 project starting from february 2024.
 
-## Libft
+## Libft :book:
 Description:
 
 Write your own library: a collection of functions that will be a useful tool for your cursus.
