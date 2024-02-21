@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
+/*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 17:14:08 by marbaron          #+#    #+#             */
-/*   Updated: 2024/02/19 14:56:03 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/02/21 10:52:24 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,5 @@ char	*ft_itoa(int n)
 
 // int main(void)
 // {
-// 	printf("%s\n", ft_itoa(-1));
+// 	printf("%s\n", ft_itoa(5565));
 // }

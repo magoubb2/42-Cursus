@@ -6,7 +6,7 @@
 /*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 11:02:21 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/20 16:51:09 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/02/21 10:51:56 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,13 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	return (dest);
 }
 
-int main(void)
-{
-    const char src[] = "hello world";
-    char dest[20];
+// int main(void)
+// {
+//     const char src[] = "hello world";
+//     char dest[20];
 
-    // ft_memcpy(dest, NULL, sizeof(src));
-    // printf("mine: %s\n", dest);
-    memcpy(dest, NULL, sizeof(src));
-    printf("real: %s\n", dest);
-}
+//     // ft_memcpy(dest, NULL, sizeof(src));
+//     // printf("mine: %s\n", dest);
+//     memcpy(dest, NULL, sizeof(src));
+//     printf("real: %s\n", dest);
+// }
