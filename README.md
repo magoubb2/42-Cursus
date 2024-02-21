@@ -19,3 +19,5 @@ The repository: https://github.com/magoubb2/42-Cursus/tree/main/libft
 >In the second part, students are required to implement additional functions that are not part of the Standard C Library. These functions are often specified only by their behavior or purpose, and students must write code to fulfill these requirements.This part of the project challenges students to think creatively and problem-solve independently.
 
 #### Overall, the libft project not only reinforces students'understanding of fundamental programming concepts but also hones their skills in algorithmic thinking and software development.
+---------------------------------------------------------------
+>_Get_next_line in the making + waiting for libft evaluation._
