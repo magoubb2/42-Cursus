@@ -6,7 +6,7 @@
 /*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 10:59:54 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/21 15:05:17 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/02/21 17:02:23 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static char *read_from_fd(int fd, char *str)
     // Initialise a buffer to store the character read from the fd.
     // Initialise counter to keep track of the current pos in the buffer.
     char    *new_str;
-    char    buffer[BUFFER_SIZE + 1];
+    char    tmp_buff[BUFFER_SIZE + 1];
     int     byte;
 
     byte = 1;
@@ -36,11 +36,11 @@ static char *read_from_fd(int fd, char *str)
     while (!ft_strchr(str, '\n') && byte != 0)
     {
         // Assign the number of byte to read in fd to get the size of tmp.
-        byte = read(fd, buffer, BUFFER_SIZE);
+        byte = read(fd, tmp_buff, BUFFER_SIZE);
         // NULL terminate the buffer.
-        buffer[byte] = '\0';
+        tmp_buff[byte] = '\0';
         // Join buffer to str.
-        new_str = ft_strjoin(str, buffer);
+        new_str = ft_strjoin(str, tmp_buff);
         // Assign str to new_str.
         str = new_str;
     }
@@ -51,8 +51,8 @@ static char *read_from_fd(int fd, char *str)
 /* The get_next_line function. */
 char *get_next_line(int fd)
 {
-    static char *buffer;
     char *line = NULL;
+    static char *buffer;
 
     /* Function that read. */
     buffer = read_from_fd(fd, buffer);
@@ -61,7 +61,18 @@ char *get_next_line(int fd)
     return (line);
 }
 
-int main(void)
+// int main(void)
+// {
+//     int fd = open("fd_test", O_RDONLY);
+//     printf("%s\n", get_next_line(fd));
+// }
+
+int main(int argc, char **argv)
 {
-    get_next_line((open("fd_test", O_RDONLY)));
+    (void)argc;
+    (void)argv;
+    // int fd = (int)atoi(*argv);
+    int fd = open("fd_test", O_RDONLY);
+    printf("%s\n", get_next_line(fd));
+    // ft_putstr_fd("hello", open("test_fd", O_WRONLY));
 }
