@@ -22,4 +22,4 @@ The repository: https://github.com/magoubb2/42-Cursus/tree/main/libft
 ---------------------------------------------------------------
 >_Get_next_line in the making + waiting for libft evaluation._
 
->The repository in progress: https://github.com/magoubb2/42-Cursus/tree/main/libft
+>The repository in progress: https://github.com/magoubb2/42-Cursus/tree/main/get_next_line
