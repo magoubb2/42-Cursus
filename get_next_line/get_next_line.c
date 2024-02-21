@@ -6,7 +6,7 @@
 /*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 10:59:54 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/21 14:43:03 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/02/21 15:05:17 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 
 /* function that read. */
 
-char *read_from_fd(int fd, char *str)
+static char *read_from_fd(int fd, char *str)
 {
     // Initialise a buffer to store the character read from the fd.
     // Initialise counter to keep track of the current pos in the buffer.
@@ -31,6 +31,7 @@ char *read_from_fd(int fd, char *str)
     int     byte;
 
     byte = 1;
+    new_str = NULL;
     // Loop until you find a newline and byte is not 0.
     while (!ft_strchr(str, '\n') && byte != 0)
     {
@@ -50,12 +51,17 @@ char *read_from_fd(int fd, char *str)
 /* The get_next_line function. */
 char *get_next_line(int fd)
 {
-    char *buffer;
-    char *line;
+    static char *buffer;
+    char *line = NULL;
 
     /* Function that read. */
     buffer = read_from_fd(fd, buffer);
     /* Function to extract each line. */
     /* Function to clean up. */
     return (line);
+}
+
+int main(void)
+{
+    get_next_line((open("fd_test", O_RDONLY)));
 }
