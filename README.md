@@ -9,8 +9,8 @@ Write your own library: a collection of functions that will be a useful tool for
 
 The repository: https://github.com/magoubb2/42-Cursus/tree/main/libft
 
-##### In the libft project at 42 school, students are tasked with creating their own library of functions. The project consists of two main parts:
-Reimplementation of Standard C Library Functions:
+#### In the libft project at 42 school, students are tasked with creating their own library of functions. The project consists of two main parts:
+### Reimplementation of Standard C Library Functions:
 
 >In this part, students write their own versions of commonly used functions found in the Standard C Library, such as strlen, strcpy, and strdup. This exercise allows students to gain a deeper understanding of how these functions work and how they can be implemented from scratch.
 
