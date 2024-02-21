@@ -6,7 +6,7 @@
 /*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 10:59:54 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/21 14:10:24 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/02/21 14:41:32 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,25 @@
 
 char *read_from_fd(int fd, char *str)
 {
-    // 1). Initialise a buffer to store the character read from the fd.
-    // 2). Initialise counter to keep track of the current pos in the buffer.
-    char    *buffer;
+    // Initialise a buffer to store the character read from the fd.
+    // Initialise counter to keep track of the current pos in the buffer.
+    char    *new_str;
+    char    buffer[BUFFER_SIZE + 1];
     int     byte;
-    // 3). use the read function.
+
+    // Loop until you find a newline and byte is not 0.
+    while (!ft_strchr(str, '\n') && byte != 0)
+    {
+        // Assign the number of byte to read in fd to get the size of tmp.
+        byte = read(fd, buffer, BUFFER_SIZE);
+        // NULL terminate the buffer.
+        buffer[byte] = '\0';
+        // Join buffer to str.
+        new_str = ft_strjoin(str, buffer);
+        // Assign str to new_str.
+        str = new_str;
+    }
+    // Return the str.
     return (str);
 }
 
@@ -38,9 +52,9 @@ char *get_next_line(int fd)
     char *buffer;
     char *line;
 
-    /* function that read. */
+    /* Function that read. */
     buffer = read_from_fd(fd, buffer);
-    /* function to extract each line. */
+    /* Function to extract each line. */
     /* Function to clean up. */
     return (line);
 }
