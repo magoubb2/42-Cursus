@@ -6,7 +6,7 @@
 /*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 10:59:50 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/21 17:03:24 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/02/21 17:16:44 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,41 +48,22 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (full_str);
 }
 
-// char	*ft_strchr(char *s, int c)
-// {
-// 	int		i;
-// 	char	character;
-
-// 	i = 0;
-// 	character = c;
-//     if (!s)
-//         return (NULL);
-// 	if (character == '\0')
-// 		return ((char *)&s[i]);
-// 	while (s[i] != '\0')
-// 	{
-// 		if (s[i] == character)
-// 			return ((char *)&s[i]);
-// 		i++;
-// 	}
-// 	return (0);
-// }
-
-
 char	*ft_strchr(char *s, int c)
 {
-	int	i;
+	int		i;
+	char	character;
 
 	i = 0;
-	if (!s)
-		return (NULL);
-	if (c == '\0')
-		return ((char *)(s + i));
-	while (s[i])
+	character = c;
+    if (!s)
+        return (NULL);
+	while (s[i] != '\0')
 	{
-		if (s[i] == (char)c)
-			return ((char *)(s + i));
+		if (s[i] == character)
+			return ((char *)&s[i]);
 		i++;
 	}
-	return (NULL);
+	if (character == '\0')
+		return ((char *)&s[i]);
+	return (0);
 }

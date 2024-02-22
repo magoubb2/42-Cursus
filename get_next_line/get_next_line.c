@@ -6,7 +6,7 @@
 /*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 10:59:54 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/21 17:02:23 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/02/22 13:10:36 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ static char *read_from_fd(int fd, char *str)
 
     byte = 1;
     new_str = NULL;
+    printf("%s\n", str);
     // Loop until you find a newline and byte is not 0.
     while (!ft_strchr(str, '\n') && byte != 0)
     {
@@ -51,11 +52,17 @@ static char *read_from_fd(int fd, char *str)
 /* The get_next_line function. */
 char *get_next_line(int fd)
 {
-    char *line = NULL;
     static char *buffer;
+    char *line = NULL;
 
+    if (fd < 0 || BUFFER_SIZE <= 0)
+		return (NULL);
+    // if buffer empty or NULL, allocate memory for buffer.
+    if (!buffer)
+        buffer = malloc((BUFFER_SIZE + 1) * sizeof(char));
     /* Function that read. */
     buffer = read_from_fd(fd, buffer);
+    printf("%s\n", buffer);
     /* Function to extract each line. */
     /* Function to clean up. */
     return (line);
@@ -72,7 +79,7 @@ int main(int argc, char **argv)
     (void)argc;
     (void)argv;
     // int fd = (int)atoi(*argv);
-    int fd = open("fd_test", O_RDONLY);
+    int fd = open("fd_test.txt", O_RDONLY);
     printf("%s\n", get_next_line(fd));
     // ft_putstr_fd("hello", open("test_fd", O_WRONLY));
 }
