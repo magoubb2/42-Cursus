@@ -6,7 +6,7 @@
 /*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 12:10:05 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/19 14:56:22 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/02/22 16:58:16 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	unsigned char		character;
 	const unsigned char	*str;
 
+	if (!s)
+		return (0);
 	i = 0;
 	character = c;
 	str = s;

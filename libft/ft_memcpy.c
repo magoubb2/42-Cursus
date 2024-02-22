@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
+/*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 11:02:21 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/21 10:51:56 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/02/22 16:58:26 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	const char	*s;
 	char		*d;
 
+	if (!src || !dest)
+		return (0);
 	i = 0;
 	s = src;
 	d = dest;
-	if (!src && !dest)
-		return (0);
 	while (i < n)
 	{
 		d[i] = s[i];

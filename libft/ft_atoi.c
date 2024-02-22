@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
+/*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 00:06:37 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/20 18:13:37 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/02/22 16:57:44 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int	ft_atoi(const char *str)
 	int	sign;
 	int	i;
 
+	if (!str)
+		return (0);
 	res = 0;
 	sign = 1;
 	i = 0;

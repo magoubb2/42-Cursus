@@ -6,7 +6,7 @@
 /*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 11:44:03 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/19 14:51:13 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/02/22 17:03:06 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 	i = 0;
 	len = ft_strlen(s);
+	if (!s)
+		return (0);
 	new_str = malloc(sizeof(char) * (len + 1));
 	if (!new_str)
 		return (NULL);

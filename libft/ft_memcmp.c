@@ -6,7 +6,7 @@
 /*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 14:16:37 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/19 14:41:29 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/02/22 16:57:27 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	const unsigned char	*str1;
 	const unsigned char	*str2;
 
+	if (!s1 || !s2)
+		return (0);
 	i = 0;
 	str1 = s1;
 	str2 = s2;

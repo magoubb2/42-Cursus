@@ -6,7 +6,7 @@
 /*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 13:44:10 by marbaron          #+#    #+#             */
-/*   Updated: 2024/02/20 11:38:04 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/02/22 17:01:21 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strdup(const char *s1)
 	size_t	i;
 	char	*copy;
 
+	if (!s1)
+		return (0);
 	s1_len = ft_strlen(s1);
 	i = 0;
 	copy = (char *)malloc(sizeof(char) * (s1_len + 1));

@@ -6,7 +6,7 @@
 /*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 12:01:04 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/19 14:51:37 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/02/22 17:03:38 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	ft_strncmp(char *s1, const char *s2, size_t n)
 	size_t	i;
 
 	i = 0;
+	if (!s1 || !s2)
+		return (0);
 	while (i < n && s1[i] == s2[i] && s1[i] != '\0')
 		i++;
 	if (i == n)

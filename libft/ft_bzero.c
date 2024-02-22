@@ -6,7 +6,7 @@
 /*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 10:21:49 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/19 14:36:23 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/02/22 17:14:03 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	ft_bzero(void *s, size_t n)
 	size_t			i;
 	unsigned char	*str;
 
+	if (!s)
+		return ;
 	i = 0;
 	str = s;
 	while (i < n)

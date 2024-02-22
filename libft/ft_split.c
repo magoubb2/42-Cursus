@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
+/*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 14:10:15 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/20 18:16:04 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/02/22 16:18:57 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

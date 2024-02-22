@@ -6,7 +6,7 @@
 /*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 12:20:53 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/19 14:49:03 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/02/22 17:14:28 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 	unsigned int	i;
 
 	i = 0;
+	if (!s)
+		return ;
 	while (s[i])
 	{
 		f(i, &s[i]);

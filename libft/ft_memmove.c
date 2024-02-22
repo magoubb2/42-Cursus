@@ -6,7 +6,7 @@
 /*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 11:22:02 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/19 15:16:53 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/02/22 16:58:36 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	*ft_memmove(void *dest, const void *src, size_t len)
 	const char	*s;
 	char		*d;
 
-	if (!src && !dest)
+	if (!src || !dest)
 		return (NULL);
 	s = src;
 	d = dest;

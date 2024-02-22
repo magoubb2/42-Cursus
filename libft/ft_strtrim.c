@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
+/*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 15:26:05 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/20 18:14:56 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/02/22 17:15:39 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		start;
 	int		end;
 
+	if (!s1 || !set)
+		return (0);
 	start = 0;
 	end = ft_strlen(s1);
 	while (s1[start] && ft_strchr(set, s1[start]))
@@ -34,5 +36,5 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 // int main(void)
 // {
-// 	printf("%s\n", ft_strtrim("abc hello  world abc lol abc", "abc"));
+// 	printf("%s\n", ft_strtrim(NULL, NULL));
 // }

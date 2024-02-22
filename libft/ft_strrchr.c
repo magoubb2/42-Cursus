@@ -6,7 +6,7 @@
 /*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 11:45:15 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/19 14:52:37 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/02/22 17:10:32 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strrchr(const char *s, int c)
 
 	character = c;
 	i = 0;
+	if (!s)
+		return (0);
 	while (s[i])
 		i++;
 	while (i >= 0)

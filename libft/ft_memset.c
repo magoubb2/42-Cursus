@@ -6,7 +6,7 @@
 /*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 15:29:50 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/19 14:56:52 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/02/22 16:58:56 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ void	*ft_memset(void *b, int c, size_t len)
 	unsigned char	*ptr;
 	unsigned char	value;
 
+	if (!b)
+		return (0);
 	i = 0;
 	value = (unsigned char)c;
 	ptr = b;

@@ -6,7 +6,7 @@
 /*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 15:11:28 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/19 15:00:05 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/02/22 17:15:34 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,10 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	const char	*n;
 	const char	*h;
 
-	if (needle[0] == '\0' && len == 0)
-		return ((char *)haystack);
-	if (haystack[0] == '\0' && needle[0] == '\0')
+	if (!needle || !haystack)
+		return (NULL);
+	if ((needle[0] == '\0' && len == 0)
+			|| (haystack[0] == '\0' && needle[0] == '\0'))
 		return ((char *)haystack);
 	while (*haystack && len != 0)
 	{
@@ -52,7 +53,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 }
 
 // int main() {    
-//     printf("mine: %s\n", ft_strnstr("aaabcabcd", "abcd", 8));
+//     printf("mine: %s\n", ft_strnstr(NULL, NULL, 8));
 //     printf("real: %s\n", strnstr("aaabcabcd", "abcd", 8));
 //     return 0;
 // }

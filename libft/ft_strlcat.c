@@ -6,7 +6,7 @@
 /*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 12:19:38 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/19 14:49:50 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/02/22 17:02:21 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ size_t	ft_strlcat(char *dest, const char *src, size_t destsize)
 
 	i_src = 0;
 	i_dest = 0;
+	if (!dest || !src)
+		return (0);
 	while (dest[i_dest] && i_dest < destsize)
 		i_dest++;
 	while (src[i_src] && (i_dest + i_src + 1) < destsize)
