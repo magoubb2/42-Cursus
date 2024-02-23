@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
+/*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 14:10:15 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/22 16:18:57 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/02/23 11:46:56 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ char	**ft_split(const char *s, char c)
 
 // int	main(void)
 // {
-// 	char	**split = ft_split("hello!zword", 'z');
+// 	char	**split = ft_split(NULL, 'z');
 // 	int i = 0;
 // 	while (split[i])
 // 	{

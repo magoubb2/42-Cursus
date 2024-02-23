@@ -6,7 +6,7 @@
 /*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 10:59:54 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/22 13:10:36 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/02/23 15:22:40 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,38 @@
 // 1). clean up buffer after each line is stash.
 
 /* function to extract each line. */
-
-// 1). Extract line from the buffer.
+static char *extract_from_fd(char *str)
+{
+    // Initialise variable that will store the currenct line.
+    // Initialise a counter.
+    char    *line;
+    int     i;
+    
+    i = 0;
+    // Loop in the (str) array until you find '\n' or '\0' to get the size of line.
+    while (str[i] != '\n' && str[i])
+        i++;
+    // Malloc the size of line.
+    line = (char *)malloc(sizeof(char) * (i + 1));
+    i = 0;
+    // Copy (str) into (line) until you find '\n' or '\0'.
+    while (str[i] != '\n' && str[i])
+    {
+        line[i] = str[i];
+        i++;
+    }
+    // If a '\n' is found replace it by a '\0' to indicate that the current line is done.
+    if (str[i] == '\n')
+    {
+        line[i] = str[i];
+        line[i] = '\0';
+        i++;
+    }
+    // Else if str[i] = '\0' add the '\0' to say the line is done.
+    else
+        line[i] = '\0';
+    return (line);
+}
 
 /* function that read. */
 
@@ -32,7 +62,6 @@ static char *read_from_fd(int fd, char *str)
 
     byte = 1;
     new_str = NULL;
-    printf("%s\n", str);
     // Loop until you find a newline and byte is not 0.
     while (!ft_strchr(str, '\n') && byte != 0)
     {
@@ -53,33 +82,28 @@ static char *read_from_fd(int fd, char *str)
 char *get_next_line(int fd)
 {
     static char *buffer;
-    char *line = NULL;
+    char *line;
 
     if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
+    printf("%i\n", fd);
     // if buffer empty or NULL, allocate memory for buffer.
     if (!buffer)
         buffer = malloc((BUFFER_SIZE + 1) * sizeof(char));
     /* Function that read. */
     buffer = read_from_fd(fd, buffer);
-    printf("%s\n", buffer);
     /* Function to extract each line. */
+    line = extract_from_fd(buffer);
     /* Function to clean up. */
     return (line);
 }
 
-// int main(void)
-// {
-//     int fd = open("fd_test", O_RDONLY);
-//     printf("%s\n", get_next_line(fd));
-// }
-
 int main(int argc, char **argv)
 {
     (void)argc;
-    (void)argv;
-    // int fd = (int)atoi(*argv);
-    int fd = open("fd_test.txt", O_RDONLY);
+    int fd;
+    fd = open(argv[1], O_RDONLY);
+    // printf("%i\n", fd);
     printf("%s\n", get_next_line(fd));
-    // ft_putstr_fd("hello", open("test_fd", O_WRONLY));
+    // printf("%i\n", fd);
 }

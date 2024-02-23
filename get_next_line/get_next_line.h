@@ -6,7 +6,7 @@
 /*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 10:59:56 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/21 17:06:51 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/02/23 13:02:59 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <fcntl.h>
 # include <stdio.h> 
 
-# define BUFFER_SIZE 42
+# define BUFFER_SIZE 1024
 
 int     ft_strlen(const char *str);
 char	*ft_strjoin(char const *s1, char const *s2);
