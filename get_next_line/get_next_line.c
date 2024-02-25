@@ -6,7 +6,7 @@
 /*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 10:59:54 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/25 14:16:36 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/02/25 14:38:46 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,19 +123,19 @@ char *get_next_line(int fd)
     buffer = read_from_fd(fd, buffer);
     /* Function to extract each line. */
     line = extract_from_fd(buffer);
-    /* Function to clean up. */
+    /* Function to clean up for next line */
     buffer = clean_up(buffer);
     return (line);
 }
 
-// int main(int argc, char **argv)
-// {
-//     (void)argc;
-//     int fd;
-//     fd = open(argv[1], O_RDONLY);
-//     // printf("%i\n", fd);
-//     printf("%s\n", get_next_line(fd));
-//     printf("%s\n", get_next_line(fd));
-//     printf("%s\n", get_next_line(fd));
-//     // printf("%i\n", fd);
-// }
+int main(int argc, char **argv)
+{
+    (void)argc;
+    int fd;
+    fd = open(argv[1], O_RDONLY);
+    // printf("%i\n", fd);
+    printf("%s\n", get_next_line(fd));
+    printf("%s\n", get_next_line(fd));
+    printf("%s\n", get_next_line(fd));
+    // printf("%i\n", fd);
+}
