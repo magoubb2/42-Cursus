@@ -20,6 +20,6 @@ The repository: https://github.com/magoubb2/42-Cursus/tree/main/libft
 
 #### Overall, the libft project not only reinforces students'understanding of fundamental programming concepts but also hones their skills in algorithmic thinking and software development.
 ---------------------------------------------------------------
->_Get_next_line in the making + waiting for libft evaluation._
+>_Get_next_line in the making
 
 >The repository in progress: https://github.com/magoubb2/42-Cursus/tree/main/get_next_line
