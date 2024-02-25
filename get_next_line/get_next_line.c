@@ -6,15 +6,45 @@
 /*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 10:59:54 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/25 13:09:29 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/02/25 14:16:36 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
 /* Function to clean up. */
+static char *clean_up(char *str)
+{
+    // Counter for str.
+    // Counter for rest.
+    // string to store the rest.
+    int     i;
+    int     j;
+    char    *rest;
 
-// 1). clean up buffer after each line is stash.
+    i = 0;
+    // Get the size of the current string.
+    while (str[i] && str[i] != '\n')
+        i++;
+    // Allocate the size for the rest of what is in (str) by substracting the
+    // size of the current line to the full len of (str).
+    rest = (char *)malloc(sizeof(char) * (ft_strlen(str) - i + 1));
+    // Move to the next char in (str) to not copy it in the (rest) string.
+    i++;
+    j = 0;
+    // Copy (str) into (rest).
+    while (str[i])
+    {
+        rest[j] = str[i];
+        i++;
+        j++;
+    }
+    // Make sure (rest) is NULL terminated.
+    rest[j] = '\0';
+    free(str);
+    // Return (rest).
+    return (rest);
+}
 
 /* function to extract each line. */
 static char *extract_from_fd(char *str)
@@ -29,7 +59,7 @@ static char *extract_from_fd(char *str)
     while (str[i] != '\n' && str[i])
         i++;
     // Malloc the size of line.
-    line = (char *)malloc(sizeof(char) * (i + 1));
+    line = (char *)malloc(sizeof(char) * (i + 2));
     i = 0;
     // Copy (str) into (line) until you find '\n' or '\0'.
     while (str[i] != '\n' && str[i])
@@ -86,8 +116,7 @@ char *get_next_line(int fd)
 
     if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-    printf("%i\n", fd);
-    // if buffer empty or NULL, allocate memory for buffer.
+    // If buffer empty or NULL, allocate memory for buffer.
     if (!buffer)
         buffer = malloc((BUFFER_SIZE + 1) * sizeof(char));
     /* Function that read. */
@@ -95,15 +124,18 @@ char *get_next_line(int fd)
     /* Function to extract each line. */
     line = extract_from_fd(buffer);
     /* Function to clean up. */
+    buffer = clean_up(buffer);
     return (line);
 }
 
-int main(int argc, char **argv)
-{
-    (void)argc;
-    int fd;
-    fd = open(argv[1], O_RDONLY);
-    // printf("%i\n", fd);
-    printf("%s\n", get_next_line(fd));
-    // printf("%i\n", fd);
-}
+// int main(int argc, char **argv)
+// {
+//     (void)argc;
+//     int fd;
+//     fd = open(argv[1], O_RDONLY);
+//     // printf("%i\n", fd);
+//     printf("%s\n", get_next_line(fd));
+//     printf("%s\n", get_next_line(fd));
+//     printf("%s\n", get_next_line(fd));
+//     // printf("%i\n", fd);
+// }
