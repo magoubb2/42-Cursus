@@ -6,7 +6,7 @@
 /*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 10:59:54 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/26 15:42:39 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/02/26 17:12:23 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,22 +118,17 @@ static char *read_from_fd(int fd, char *str)
     {
         // Assign the number of byte to read in fd to get the size of tmp.
         byte = read(fd, tmp_buff, BUFFER_SIZE);
-        if (byte == -1)
-		{
-			if (new_str)
-				free (new_str);
-			if (str)
-				free (str);
-			return (NULL);
-		}
         // NULL terminate the buffer.
         tmp_buff[byte] = '\0';
         // Join buffer to str.
         new_str = ft_strjoin(str, tmp_buff);
-        if (str)
-            free(str);
-        // Assign str to new_str.
-        str = new_str;
+        if (!str)
+           str = ft_strdup(tmp_buff);
+        else
+            // Assign str to new_str.
+            str = new_str;
+        // printf("%s\n", str);
+        // printf("%i\n", byte);
     }
     // Return the str.
     return (str);
@@ -147,18 +142,16 @@ char *get_next_line(int fd)
 
     if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-    // if (!fd)      
-        // return (NULL);
     // If buffer empty or NULL, allocate memory for buffer.
     // if (!buffer)
     // {
-    // buffer = malloc((BUFFER_SIZE + 1) * sizeof(char));
-        // If malloc fails.
-        if (!buffer)
-        {
-            return (NULL);
-            free(buffer);
-        }
+        // buffer = ft_calloc((BUFFER_SIZE + 1) * sizeof(char));
+    //     // If malloc fails.
+        // if (!buffer)
+        // {
+        //     return (NULL);
+        //     free(buffer);
+        // }
     // }
     /* Function that read. */
     buffer = read_from_fd(fd, buffer);

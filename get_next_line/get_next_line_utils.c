@@ -6,11 +6,33 @@
 /*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 10:59:50 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/26 14:09:01 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/02/26 16:43:00 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+
+char	*ft_strdup(const char *s1)
+{
+	size_t	s1_len;
+	size_t	i;
+	char	*copy;
+
+	if (!s1)
+		return (0);
+	s1_len = ft_strlen(s1);
+	i = 0;
+	copy = (char *)malloc(sizeof(char) * (s1_len + 1));
+	if (!copy)
+		return (NULL);
+	while (s1[i])
+	{
+		copy[i] = s1[i];
+		i++;
+	}
+	copy[i] = '\0';
+	return ((char *)copy);
+}
 
 int ft_strlen(const char *str)
 {
