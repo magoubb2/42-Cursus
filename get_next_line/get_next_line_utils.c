@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
+/*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 10:59:50 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/21 17:16:44 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/02/26 14:09:01 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,10 +60,10 @@ char	*ft_strchr(char *s, int c)
 	while (s[i] != '\0')
 	{
 		if (s[i] == character)
-			return ((char *)&s[i]);
+			return (&s[i]);
 		i++;
 	}
 	if (character == '\0')
-		return ((char *)&s[i]);
+		return (&s[i]);
 	return (0);
 }
