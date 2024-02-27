@@ -6,7 +6,7 @@
 /*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 10:59:54 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/27 16:28:30 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/02/27 17:50:13 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ static char *clean_up(char *str)
     if (str[i])
     {
         rest = (char *)malloc(sizeof(char) * (ft_strlen(str) - i + 1));
-        if (!str)
+        if (!rest)
         {
-            free(str);
+            // free(rest);
             return (NULL);
         }
     }
@@ -146,8 +146,6 @@ static char *read_from_fd(int fd, char *str)
              // Assign str to new_str.
             str = new_str;
         }
-        // printf("%s\n", str);
-        // printf("%i\n", byte);
     }
     if (!str)
         free(new_str);
