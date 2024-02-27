@@ -6,7 +6,7 @@
 /*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 10:59:54 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/26 17:43:50 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/02/27 11:36:29 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,6 +118,8 @@ static char *read_from_fd(int fd, char *str)
     {
         // Assign the number of byte to read in fd to get the size of tmp.
         byte = read(fd, tmp_buff, BUFFER_SIZE);
+        if (byte == -1)
+            return (NULL);
         // NULL terminate the buffer.
         tmp_buff[byte] = '\0';
         // Join buffer to str.
@@ -125,11 +127,17 @@ static char *read_from_fd(int fd, char *str)
         if (!str)
            str = ft_strdup(tmp_buff);
         else
-            // Assign str to new_str.
+        {
+            if (str)
+                free (str);
+             // Assign str to new_str.
             str = new_str;
+        }
         // printf("%s\n", str);
         // printf("%i\n", byte);
     }
+    if (!str)
+        free(new_str);
     // Return the str.
     return (str);
 }
@@ -142,19 +150,11 @@ char *get_next_line(int fd)
 
     if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-    // If buffer empty or NULL, allocate memory for buffer.
-    // if (!buffer)
-    // {
-        // buffer = ft_calloc((BUFFER_SIZE + 1) * sizeof(char));
-    //     // If malloc fails.
-        // if (!buffer)
-        // {
-        //     return (NULL);
-        //     free(buffer);
-        // }
-    // }
     /* Function that read. */
     buffer = read_from_fd(fd, buffer);
+    // If malloc fails.
+    if (!buffer)
+        return (NULL);
     /* Function to extract each line. */
     line = extract_from_fd(buffer);
     /* Function to clean up for next line */
@@ -162,18 +162,12 @@ char *get_next_line(int fd)
     return (line);
 }
 
-int main(int argc, char **argv)
-{
-    (void)argc;
-    int fd;
-    fd = open(argv[1], O_RDONLY);
-    // printf("%i\n", fd);
-    char *str = get_next_line(fd);
-    printf("%s\n", str);
-    // char *str = get_next_line(fd);
-    printf("%s\n", str);
-    // char *str = get_next_line(fd);
-    printf("%s\n", str);
-    free(str);
-    // printf("%i\n", fd);
-}
+// int main(int argc, char **argv)
+// {
+//     (void)argc;
+//     int fd;
+//     fd = open(argv[1], O_RDONLY);
+//     printf("%s\n", get_next_line(fd));
+//     printf("%s\n", get_next_line(fd));
+//     printf("%s\n", get_next_line(fd));
+// }
