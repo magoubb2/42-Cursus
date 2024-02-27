@@ -6,7 +6,7 @@
 /*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 10:59:54 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/27 13:42:56 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/02/27 16:28:30 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,14 @@ static char *clean_up(char *str)
     // Allocate the size for the rest of what is in (str) by substracting the
     // size of the current line to the full len of (str).
     if (str[i])
+    {
         rest = (char *)malloc(sizeof(char) * (ft_strlen(str) - i + 1));
+        if (!str)
+        {
+            free(str);
+            return (NULL);
+        }
+    }
     else
     {
         free (str);
@@ -92,12 +99,15 @@ static char *extract_from_fd(char *str)
     if (str[i] == '\n')
     {
         line[i] = str[i];
-        line[i] = '\0';
         i++;
+        line[i] = '\0';
     }
     // Else if str[i] = '\0' add the '\0' to say the line is done.
     else
         line[i] = '\0';
+    // For new line.
+    if (line[0] == '\0')
+        return (NULL);
     return (line);
 }
 
