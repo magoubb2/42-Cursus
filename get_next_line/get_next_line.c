@@ -6,7 +6,7 @@
 /*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 10:59:54 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/27 11:36:29 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/02/27 13:42:56 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,6 +118,9 @@ static char *read_from_fd(int fd, char *str)
     {
         // Assign the number of byte to read in fd to get the size of tmp.
         byte = read(fd, tmp_buff, BUFFER_SIZE);
+        // For when fd is empty.
+        if (byte == 0  && !str)
+            return (NULL);
         if (byte == -1)
             return (NULL);
         // NULL terminate the buffer.
@@ -168,6 +171,6 @@ char *get_next_line(int fd)
 //     int fd;
 //     fd = open(argv[1], O_RDONLY);
 //     printf("%s\n", get_next_line(fd));
-//     printf("%s\n", get_next_line(fd));
-//     printf("%s\n", get_next_line(fd));
+//     // printf("%s\n", get_next_line(fd));
+//     // printf("%s\n", get_next_line(fd));
 // }
