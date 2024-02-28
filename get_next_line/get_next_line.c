@@ -6,7 +6,7 @@
 /*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 10:59:54 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/28 11:57:13 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/02/28 13:06:05 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static char *clean_up(char *str)
         rest = (char *)malloc(sizeof(char) * (ft_strlen(str) - i + 1));
         if (!rest)
         {
-            free(rest);
+            free (str);
             return (NULL);
         }
     }
@@ -46,12 +46,6 @@ static char *clean_up(char *str)
     }
     // Move to the next char in (str) to not copy it in the (rest) string.
     i++;
-    // If malloc fails.
-    if (!rest)
-    {
-        free (rest);
-        return (NULL);
-    }
     j = 0;
     // Copy (str) into (rest).
     while (str[i])

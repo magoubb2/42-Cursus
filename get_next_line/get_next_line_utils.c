@@ -6,7 +6,7 @@
 /*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 10:59:50 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/28 11:50:18 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/02/28 12:58:46 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ int ft_strlen(const char *str)
 {
     int i;
 
+	if (!str)
+		return (0);
     i = 0;
     while (str[i])
         i++;
