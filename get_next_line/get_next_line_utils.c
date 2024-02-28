@@ -6,7 +6,7 @@
 /*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 10:59:50 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/27 17:49:30 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/02/28 11:50:18 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (s1 == NULL || s2 == NULL)
 		return (0);
 	full_len = ft_strlen(s1) + ft_strlen(s2);
+	if (!full_len)
+		return (NULL);
 	full_str = (char *)malloc(sizeof(char) * full_len + 1);
 	if (!full_str)
 		return (NULL);
