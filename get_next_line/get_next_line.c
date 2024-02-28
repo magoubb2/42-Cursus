@@ -6,7 +6,7 @@
 /*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 10:59:54 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/28 13:06:05 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/02/28 13:47:36 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,16 +29,9 @@ static char *clean_up(char *str)
     while (str[i] && str[i] != '\n')
         i++;
     if (str[i])
-    {
         // Allocate the size for the rest of what is in (str) by substracting the
         // size of the current line to the full len of (str).
         rest = (char *)malloc(sizeof(char) * (ft_strlen(str) - i + 1));
-        if (!rest)
-        {
-            free (str);
-            return (NULL);
-        }
-    }
     else
     {
         free (str);
@@ -46,6 +39,8 @@ static char *clean_up(char *str)
     }
     // Move to the next char in (str) to not copy it in the (rest) string.
     i++;
+    if (!rest)
+        return (NULL);
     j = 0;
     // Copy (str) into (rest).
     while (str[i])
@@ -126,7 +121,12 @@ static char *read_from_fd(int fd, char *str)
         if (byte == 0  && !str)
             return (NULL);
         if (byte == -1)
+        {
+            // If byte == -1 and there is something in str.
+            if (str)
+                free (str);
             return (NULL);
+        }
         // NULL terminate the buffer.
         tmp_buff[byte] = '\0';
         // Join buffer to str.
