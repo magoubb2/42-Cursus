@@ -34,7 +34,7 @@ This project is about programming a function that returns a line read from a fil
 
 >The repository: https://github.com/magoubb2/42-Cursus/tree/main/get_next_line
 
-#### The get_next_line function is a project assignment often encountered at 42 school. It is designed to read from a file descriptor (fd) line by line until the end of the file (EOF). The function dynamically allocates memory as needed to store each line read from the file descriptor and returns it to the caller.
+#### The get_next_line function is a project assignment at 42 school. It is designed to read from a file descriptor (fd) line by line until the end of the file (EOF). The function dynamically allocates memory as needed to store each line read from the file descriptor and returns it to the caller.
 
 >The get_next_line function is useful for reading input from files, particularly when the length of the lines is unknown or potentially very large. It is a fundamental tool for file input processing in C programming.
 
