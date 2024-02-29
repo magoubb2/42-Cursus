@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
+/*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 10:59:54 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/28 13:47:36 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/02/29 11:45:36 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,14 @@ static char *clean_up(char *str)
     char    *rest;
 
     i = 0;
-    if (!str[0])
-        return (NULL);
     // Get the size of the current string.
     while (str[i] && str[i] != '\n')
         i++;
+    // Allocate the size for the rest of what is in (str) by substracting the
+    // size of the current line to the full len of (str).
     if (str[i])
-        // Allocate the size for the rest of what is in (str) by substracting the
-        // size of the current line to the full len of (str).
         rest = (char *)malloc(sizeof(char) * (ft_strlen(str) - i + 1));
+    // If there are no more character in (str) free str.
     else
     {
         free (str);
@@ -39,8 +38,6 @@ static char *clean_up(char *str)
     }
     // Move to the next char in (str) to not copy it in the (rest) string.
     i++;
-    if (!rest)
-        return (NULL);
     j = 0;
     // Copy (str) into (rest).
     while (str[i])
@@ -94,7 +91,7 @@ static char *extract_from_fd(char *str)
     // Else if str[i] = '\0' add the '\0' to say the line is done.
     else
         line[i] = '\0';
-    // For new line.
+    // For if only new lines.
     if (line[0] == '\0')
         return (NULL);
     return (line);
@@ -120,6 +117,7 @@ static char *read_from_fd(int fd, char *str)
         // For when fd is empty.
         if (byte == 0  && !str)
             return (NULL);
+        // If byte == -1.
         if (byte == -1)
         {
             // If byte == -1 and there is something in str.
@@ -131,18 +129,18 @@ static char *read_from_fd(int fd, char *str)
         tmp_buff[byte] = '\0';
         // Join buffer to str.
         new_str = ft_strjoin(str, tmp_buff);
+        // If it's str is empty duplicate tmp_buff into str.
         if (!str)
            str = ft_strdup(tmp_buff);
         else
         {
+            // If str is not empty.
             if (str)
                 free (str);
              // Assign str to new_str.
             str = new_str;
         }
     }
-    if (!str)
-        free(new_str);
     // Return the str.
     return (str);
 }
@@ -172,6 +170,8 @@ char *get_next_line(int fd)
 //     (void)argc;
 //     int fd;
 //     fd = open(argv[1], O_RDONLY);
+//     printf("%s", get_next_line(fd));
+//     printf("%s", get_next_line(fd));
 //     printf("%s\n", get_next_line(fd));
 //     // printf("%s\n", get_next_line(fd));
 //     // printf("%s\n", get_next_line(fd));

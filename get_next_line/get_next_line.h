@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
+/*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 10:59:56 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/26 16:49:55 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/02/28 16:00:27 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <stdio.h> 
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1
+#  define BUFFER_SIZE 1024
 # endif
 
 int     ft_strlen(const char *str);
