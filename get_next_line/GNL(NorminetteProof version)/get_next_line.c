@@ -6,46 +6,44 @@
 /*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 10:59:54 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/29 12:06:53 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/02/29 14:26:30 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
 /* Function to clean up. */
-// Get the size of the current string.
-// Allocate the size for the rest of what is in (str) by substracting the
-// size of the current line to the full len of (str).
-// If there are no more character in (str) free str.
-// Move to the next char in (str) to not copy it in the (rest) string.
-// Copy (str) into (rest).
-// Make sure (rest) is NULL terminated.
-// Free what's in the old buffer.
-// Return (rest).
+// The clean_up function takes a string str as input  and  removes  the  first 
+// line from it, returning the remaining content as a new string. It  iterates 
+// through str to find the end of the first line or the  end  of  the  string, 
+// allocates memory for the remaining content, copies  it  into  a  new string 
+// rest, and ensures null termination. If str only consists of the first line, 
+// it frees the  memory  and  returns  NULL.  Finally,  it  frees  the  memory 
+// allocated for the original string  and  returns  the  pointer  to  the  new 
+// string  containing  the   remaining   content   after   the   first   line.
 static char *clean_up(char *str);
 
 /* function to extract each line. */
-// Loop in the (str) array until you find '\n' or '\0' to get the size of line.
-// Malloc the size of line.
-// If malloc fails.
-// Copy (str) into (line) until you find '\n' or '\0'.
-// If a '\n' is found replace it by a '\0' to indicate that the current line is done.
-// Else if str[i] = '\0' add the '\0' to say the line is done.
-// For if only new lines.
+// This function iterates through the input string str to find the end of  the 
+// current line or the end of the string, allocating memory to store the line. 
+// It then copies characters from str into the line buffer until it encounters
+// a newline character or the end of the string. If memory  allocation  fails, 
+// it returns NULL.  After  copying,  it  terminates  the  line  with  a  null 
+// character ('\0') and  returns  the line. If the first character of the line 
+// is  a  null  character, indicating  an  empty  line,   it   returns   NULL.
 static char *extract_from_fd(char *str);
 
 /* function that read. */
-// Loop until you find a newline and byte is not 0.
-// Assign the number of byte to read in fd to get the size of tmp.
-// For when fd is empty.
-// If byte == -1.
-// If byte == -1 and there is something in str.
-// NULL terminate the buffer.
-// Join buffer to str.
-// If it's str is empty duplicate tmp_buff into str.
-// If str is not empty.
-// Assign str to new_str.
-// Return the str.
+// reads data from a file descriptor (fd)  and  appends  it to a given  string 
+// (str) until it encounters a newline character in str or reaches the end  of 
+// the file. It employs a buffer (tmp_buff) to read data in  chunks  from  the 
+// file descriptor, handling cases where the descriptor is empty or encounters
+//  an error during reading. After reading each  chunk,  it  concatenates  the 
+// buffer's contents to str  using  a  custom  string  concatenation  function 
+// (ft_strjoin), updating  str  accordingly. If str  is  initially  empty,  it 
+// duplicates the buffer  into  str  using ft_strdup. Memory allocated for the 
+// previous contents of str is freed after each iteration. Finally, it returns 
+// the updated string str containing the data  read from the  file descriptor. 
 static char *read_from_fd(int fd, char *str);
 
 static char *clean_up(char *str)

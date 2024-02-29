@@ -6,7 +6,7 @@
 /*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 10:59:54 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/29 11:45:36 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/02/29 14:20:55 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,6 @@ static char *extract_from_fd(char *str)
 }
 
 /* function that read. */
-
 static char *read_from_fd(int fd, char *str)
 {
     // Initialise a buffer to store the character read from the fd.
