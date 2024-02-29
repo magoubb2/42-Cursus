@@ -2,6 +2,12 @@
 
 >This is a repository of all of my 42 project starting from february 2024.
 
+## Score Board.
+|     **Project**     |           **Score**            |           ...           |
+|:-------------------:|:------------------------------:|:-----------------------:|
+|     ```Libft```     |           ```100%```           |    :white_check_mark:   |
+| ```Get_Next_Line``` | ```Waiting for evaluation...```|:arrows_counterclockwise:|
+
 ## Libft :book:
 Description:
 
