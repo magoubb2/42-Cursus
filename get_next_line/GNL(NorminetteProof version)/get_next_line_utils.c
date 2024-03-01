@@ -6,7 +6,7 @@
 /*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 10:59:50 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/28 12:58:46 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/03/01 18:21:49 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,4 +92,32 @@ char	*ft_strchr(char *s, int c)
 	if (character == '\0')
 		return (&s[i]);
 	return (0);
+}
+
+char	*ft_substr(char const *s, unsigned int start, size_t len)
+{
+	size_t	i;
+	size_t	j;
+	char	*sub_str;
+
+	i = 0;
+	j = 0;
+	if (!s)
+		return (NULL);
+	if (start >= ft_strlen(s))
+		start = ft_strlen(s);
+	if (ft_strlen(s) - start < len)
+		len = ft_strlen(s) - start;
+	sub_str = malloc((sizeof(char)) * (len + 1));
+	if (!sub_str)
+		return (NULL);
+	i = start;
+	while (j != len)
+	{
+		sub_str[j] = s[i];
+		i++;
+		j++;
+	}
+	sub_str[j] = '\0';
+	return (sub_str);
 }

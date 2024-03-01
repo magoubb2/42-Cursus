@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
+/*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 10:59:54 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/02/29 14:26:30 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/03/01 18:18:54 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,11 @@ static char *clean_up(char *str)
     char    *rest;
 
     i = 0;
-    while (str[i] && str[i] != '\n')
-        i++;
+    while (str[i])
+    {
+        if (str[i++] == '\n')
+            break;
+    }
     if (str[i])
         rest = (char *)malloc(sizeof(char) * (ft_strlen(str) - i + 1));
     else
@@ -62,7 +65,6 @@ static char *clean_up(char *str)
         free (str);
         return (NULL);
     }
-    i++;
     j = 0;
     while (str[i])
     {
@@ -83,12 +85,12 @@ static char *extract_from_fd(char *str)
     i = 0;
     while (str[i] != '\n' && str[i])
         i++;
-    line = (char *)malloc(sizeof(char) * (i + 2));
+    if (!str[i])
+        line = (char *)malloc(sizeof(char) * (i + 1));
+    else
+        line = (char *)malloc(sizeof(char) * (i + 2));
     if (!line)
-    {
         return (NULL);
-        free(line);
-    }
     i = 0;
     while (str[i] != '\n' && str[i])
     {
@@ -99,12 +101,13 @@ static char *extract_from_fd(char *str)
     {
         line[i] = str[i];
         i++;
-        line[i] = '\0';
     }
-    else
-        line[i] = '\0';
+    line[i] = '\0';
     if (line[0] == '\0')
+    {
+        free(line);
         return (NULL);
+    }
     return (line);
 }
 
@@ -162,8 +165,8 @@ char *get_next_line(int fd)
 //     int fd;
 //     fd = open(argv[1], O_RDONLY);
 //     printf("%s", get_next_line(fd));
-//     printf("%s", get_next_line(fd));
-//     printf("%s\n", get_next_line(fd));
+//     // printf("%s", get_next_line(fd));
 //     // printf("%s\n", get_next_line(fd));
 //     // printf("%s\n", get_next_line(fd));
-// }
+//     // printf("%s\n", get_next_line(fd));
+// } 
