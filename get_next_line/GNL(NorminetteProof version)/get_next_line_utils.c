@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
+/*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 10:59:50 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/03/01 18:21:49 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/03/02 10:24:39 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,10 +94,10 @@ char	*ft_strchr(char *s, int c)
 	return (0);
 }
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char *s, int start, int len)
 {
-	size_t	i;
-	size_t	j;
+	int	i;
+	int	j;
 	char	*sub_str;
 
 	i = 0;
@@ -110,7 +110,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		len = ft_strlen(s) - start;
 	sub_str = malloc((sizeof(char)) * (len + 1));
 	if (!sub_str)
+	{
+		free(sub_str);
 		return (NULL);
+	}
 	i = start;
 	while (j != len)
 	{

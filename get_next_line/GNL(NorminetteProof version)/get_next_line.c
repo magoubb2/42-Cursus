@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
+/*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 10:59:54 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/03/01 18:18:54 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/03/02 10:27:12 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
