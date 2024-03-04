@@ -6,7 +6,7 @@
 /*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 10:57:02 by marbaron          #+#    #+#             */
-/*   Updated: 2024/03/04 11:08:33 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/03/04 15:03:36 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,7 @@
 #include <stdarg.h>
 #include <unistd.h>
 #include "./libft/libft.h"
+
+int ft_printf(const char *format, ...);
 
 #endif
