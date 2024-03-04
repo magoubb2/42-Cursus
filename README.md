@@ -7,7 +7,7 @@
 |:-------------------:|:------------------------------:|:-----------------------:|
 |     ```Libft```     |           ```100%```           |    :white_check_mark:   |
 | ```Get_Next_Line``` | ```Waiting for evaluation...```|:arrows_counterclockwise:|
-
+|   ```ft_printf```   |      ```In the work...```      | :hourglass_flowing_sand:|
 ## Libft :book:
 Description:
 
