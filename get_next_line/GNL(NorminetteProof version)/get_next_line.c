@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
+/*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 10:59:54 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/03/02 10:27:12 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/03/02 16:44:39 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,11 @@ static char *clean_up(char *str)
             break;
     }
     if (str[i])
+    {
         rest = (char *)malloc(sizeof(char) * (ft_strlen(str) - i + 1));
+        if (!rest)
+            return (NULL);
+    }
     else
     {
         free (str);
@@ -164,9 +168,9 @@ char *get_next_line(int fd)
 //     (void)argc;
 //     int fd;
 //     fd = open(argv[1], O_RDONLY);
-//     printf("%s", get_next_line(fd));
-//     // printf("%s", get_next_line(fd));
-//     // printf("%s\n", get_next_line(fd));
-//     // printf("%s\n", get_next_line(fd));
-//     // printf("%s\n", get_next_line(fd));
+//     printf("%s\n", get_next_line(fd));
+//     printf("%s\n", get_next_line(fd));
+//     printf("%s\n", get_next_line(fd));
+//     printf("%s\n", get_next_line(fd));
+//     printf("%s\n", get_next_line(fd));
 // } 
