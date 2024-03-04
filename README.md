@@ -50,3 +50,4 @@ In the get_next_line project at 42 school, students are tasked with implementing
 Overall, the get_next_line project provides students with practical experience in file I/O operations and memory management in the C programming language. It challenges students to write efficient, robust, and portable code while adhering to the project requirements and guidelines.
 
 -----------------------------------------------------------------
+> ft_printf in the work here is the repository: https://github.com/magoubb2/42-Cursus/tree/main/ft_printf
