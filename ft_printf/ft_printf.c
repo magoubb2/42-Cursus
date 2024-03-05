@@ -6,7 +6,7 @@
 /*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 11:09:22 by marbaron          #+#    #+#             */
-/*   Updated: 2024/03/05 11:01:56 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/03/05 11:21:34 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ static int convert(va_list args, const char place_holder)
 	// %c -> ft_putchar_fd
 	if (place_holder == 'c')
 		// Convert the place holder for a char.
+		return (ft_putchar_fd_pf(va_arg(args, int), 1));
 	// %i -> ft_putnbr_fd || %d -> ft_putnbr_fd
 	if (place_holder == 'i' || place_holder == 'd')
 		// Convert the place holder for a int.
@@ -38,6 +39,8 @@ static int convert(va_list args, const char place_holder)
 	// %p -> ft_putpointer_fd
 	if (place_holder == 'p')
 		// Convert the place holder for a pointer's address
+	if (place_holder == '%')
+		ft_putchar_fd_pf('%', 1);
 	return (0);
 }
 
