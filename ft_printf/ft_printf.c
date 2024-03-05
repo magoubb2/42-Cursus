@@ -6,7 +6,7 @@
 /*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 11:09:22 by marbaron          #+#    #+#             */
-/*   Updated: 2024/03/05 11:21:34 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/03/05 12:54:42 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,18 @@
 /* Function that convert each variable type */
 static int convert(va_list args, const char place_holder)
 {
-	(void) args;
-	(void) format;
-	// %s -> ft_putstr_fd
-	if (place_holder == 's')
-		// Convert the place holder for a string.
 	// %c -> ft_putchar_fd
 	if (place_holder == 'c')
 		// Convert the place holder for a char.
 		return (ft_putchar_fd_pf(va_arg(args, int), 1));
+	// %s -> ft_putstr_fd
+	if (place_holder == 's')
+		// Convert the place holder for a string.
+		ft_putstr_fd_pf(va_arg(args, char *), 1);
 	// %i -> ft_putnbr_fd || %d -> ft_putnbr_fd
 	if (place_holder == 'i' || place_holder == 'd')
 		// Convert the place holder for a int.
+		ft_putnbr_fd_pf(va_arg(args, char *), 1);
 	// %u -> ft_undecimal_fd
 	if (place_holder == 'u')
 		// Convert the place holder for a unsigned int.
