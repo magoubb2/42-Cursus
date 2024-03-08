@@ -6,7 +6,7 @@
 /*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 11:09:22 by marbaron          #+#    #+#             */
-/*   Updated: 2024/03/05 12:54:42 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/03/08 12:59:05 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,18 +26,21 @@ static int convert(va_list args, const char place_holder)
 	// %i -> ft_putnbr_fd || %d -> ft_putnbr_fd
 	if (place_holder == 'i' || place_holder == 'd')
 		// Convert the place holder for a int.
-		ft_putnbr_fd_pf(va_arg(args, char *), 1);
+		ft_putnbr_fd_pf(va_arg(args, int), 1);
 	// %u -> ft_undecimal_fd
 	if (place_holder == 'u')
 		// Convert the place holder for a unsigned int.
+		ft_putnbr_base(va_arg(args, unsigned int), "0123456789");
 	// %x -> ft_puthex_fd
 	if (place_holder == 'x')
 		// Convert the place holder for a integer as an hexadecimal in lower case.
+		ft_putnbr_base(va_arg(args, unsigned int), "0123456789abcdef");
 	// %X -> ft_putheX_fd
 	if (place_holder == 'X')
 		// Convert the place holder for a integer as an hexadecimal in upper case.
+		ft_putnbr_base(va_arg(args, unsigned int), "0123456789ABCDEF");
 	// %p -> ft_putpointer_fd
-	if (place_holder == 'p')
+	// if (place_holder == 'p')
 		// Convert the place holder for a pointer's address
 	if (place_holder == '%')
 		ft_putchar_fd_pf('%', 1);
@@ -57,9 +60,12 @@ int ft_printf(const char *format, ...)
 	while (format[i])
 	{
 		if (format[i] == '%')
+		{
 			// convert the place holder.
 			print = print + convert(args, format[i + 1]);
-		if (format[i] != '%')
+			i++;
+		}
+		else
 			print = print + ft_putchar_fd_pf(format[i], 1);
 		i++;
 	}
@@ -69,5 +75,22 @@ int ft_printf(const char *format, ...)
 
 int main(void)
 {
-	ft_printf("hello", 1);
+	char *str = "hello";
+	char c = 'c';
+	int i = 34;
+	int ui = -34;
+	int x = 11;
+	ft_printf("string: [%s]\n", str);
+	ft_printf("\n");
+	ft_printf("char: [%c]\n", c);
+	ft_printf("\n");
+	ft_printf("int: [%i]\n", i);
+	ft_printf("\n");
+	ft_printf("mine unsigned int: [%u]\n", ui);
+	ft_printf("\n");
+	printf("real unsigned int: [%u]\n", ui);
+	ft_printf("\n");
+	ft_printf("hexadecimal x: [%x]\n", x);
+	ft_printf("\n");
+	ft_printf("hexadecimal X: [%X]\n", x);
 }

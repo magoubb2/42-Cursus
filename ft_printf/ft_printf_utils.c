@@ -6,7 +6,7 @@
 /*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 14:58:22 by marbaron          #+#    #+#             */
-/*   Updated: 2024/03/05 13:11:25 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/03/08 12:46:52 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ size_t	ft_putchar_fd_pf(char c, int fd)
 size_t	ft_putstr_fd_pf(char *s, int fd)
 {
 	if (!s)
-		return ;
+		return (write(1, "null\n", 5));
 	else
 		return (write(fd, s, ft_strlen(s)));
 }
@@ -42,7 +42,7 @@ size_t	ft_putnbr_fd_pf(int n, int fd)
 	if (n == INT_MIN)
 	{
 		i = i + write(fd, "-2147483648", 11);
-		return ;
+		return (i);
 	}
 	if (n < 0)
 	{
@@ -56,24 +56,27 @@ size_t	ft_putnbr_fd_pf(int n, int fd)
 }
 
 /* %u ft_undecimal_fd */
- ft_putnbr_base(int nbr, char *base)
+
+
+/* %x ft_puthex_fd */
+/* %X ft_putheX_fd */
+size_t ft_putnbr_base(int nbr, char *base)
 {
+	int i;
     int base_len;
     
+	i = 0;
     base_len = ft_strlen(base);
     if (nbr < 0)
     {
-        write(1, "-", 1);
+        i = i + write(1, "-", 1);
         nbr = -nbr;
     }
     if (nbr >= base_len)
         ft_putnbr_base(nbr / base_len, base);
-    write(1,&base[nbr % base_len], 1);
+    i = i + write(1,&base[nbr % base_len], 1);
+	return (i);
 }
 
-
-/* %x ft_puthex_fd */
-
-/* %X ft_putheX_fd */
 
 /* %p ft_putpointer_fd */
