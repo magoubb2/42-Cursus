@@ -6,7 +6,7 @@
 /*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 11:09:22 by marbaron          #+#    #+#             */
-/*   Updated: 2024/03/08 14:28:37 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/03/08 15:47:26 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ int ft_printf(const char *format, ...)
 	va_list args;
 	
 	i = 0;
+	print = 0;
 	va_start(args, format);
 	while (format[i])
 	{
@@ -92,6 +93,9 @@ int ft_printf(const char *format, ...)
 // 	printf("real unsigned int: [%u]\n", ui);
 // 	ft_printf("\n");
 // 	ft_printf("hexadecimal x: [%x]\n", x);
-// 	ft_printf("\n");
 // 	ft_printf("hexadecimal X: [%X]\n", x);
+// 	ft_printf("\n");
+// 	ft_printf("mine test: %%");
+// 	printf("real test: %%");
+// 	ft_printf("\n");
 // }

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_utils.c                                  :+:      :+:    :+:   */
+/*   ft_place_holder_utils.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 14:58:22 by marbaron          #+#    #+#             */
-/*   Updated: 2024/03/08 13:14:40 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/03/08 15:43:54 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ size_t	ft_putchar_fd_pf(char c, int fd)
 size_t	ft_putstr_fd_pf(char *s, int fd)
 {
 	if (!s)
-		return (write(1, "null\n", 5));
+		return (write(1, "(null)", 6));
 	else
 		return (write(fd, s, ft_strlen(s)));
 }
