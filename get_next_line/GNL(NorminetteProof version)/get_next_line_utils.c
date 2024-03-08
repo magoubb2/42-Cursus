@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
+/*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 10:59:50 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/03/02 10:24:39 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/03/08 11:15:00 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,16 +34,16 @@ char	*ft_strdup(const char *s1)
 	return ((char *)copy);
 }
 
-int ft_strlen(const char *str)
+int	ft_strlen(const char *str)
 {
-    int i;
+	int	i;
 
 	if (!str)
 		return (0);
-    i = 0;
-    while (str[i])
-        i++;
-    return (i);
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
 }
 
 char	*ft_strjoin(char const *s1, char const *s2)
@@ -81,8 +81,8 @@ char	*ft_strchr(char *s, int c)
 
 	i = 0;
 	character = c;
-    if (!s)
-        return (NULL);
+	if (!s)
+		return (NULL);
 	while (s[i] != '\0')
 	{
 		if (s[i] == character)
@@ -94,33 +94,9 @@ char	*ft_strchr(char *s, int c)
 	return (0);
 }
 
-char	*ft_substr(char *s, int start, int len)
+void	*ft_free(char *str)
 {
-	int	i;
-	int	j;
-	char	*sub_str;
-
-	i = 0;
-	j = 0;
-	if (!s)
-		return (NULL);
-	if (start >= ft_strlen(s))
-		start = ft_strlen(s);
-	if (ft_strlen(s) - start < len)
-		len = ft_strlen(s) - start;
-	sub_str = malloc((sizeof(char)) * (len + 1));
-	if (!sub_str)
-	{
-		free(sub_str);
-		return (NULL);
-	}
-	i = start;
-	while (j != len)
-	{
-		sub_str[j] = s[i];
-		i++;
-		j++;
-	}
-	sub_str[j] = '\0';
-	return (sub_str);
+	if (str)
+		free(str);
+	return (0);
 }
