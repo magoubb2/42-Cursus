@@ -6,7 +6,7 @@
 /*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 11:09:22 by marbaron          #+#    #+#             */
-/*   Updated: 2024/03/08 12:59:05 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/03/08 14:28:37 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static int convert(va_list args, const char place_holder)
 	// %u -> ft_undecimal_fd
 	if (place_holder == 'u')
 		// Convert the place holder for a unsigned int.
-		ft_putnbr_base(va_arg(args, unsigned int), "0123456789");
+		ft_unsigned_fd_pf(va_arg(args, unsigned int), 1);
 	// %x -> ft_puthex_fd
 	if (place_holder == 'x')
 		// Convert the place holder for a integer as an hexadecimal in lower case.
@@ -73,24 +73,25 @@ int ft_printf(const char *format, ...)
 	return (print);
 }
 
-int main(void)
-{
-	char *str = "hello";
-	char c = 'c';
-	int i = 34;
-	int ui = -34;
-	int x = 11;
-	ft_printf("string: [%s]\n", str);
-	ft_printf("\n");
-	ft_printf("char: [%c]\n", c);
-	ft_printf("\n");
-	ft_printf("int: [%i]\n", i);
-	ft_printf("\n");
-	ft_printf("mine unsigned int: [%u]\n", ui);
-	ft_printf("\n");
-	printf("real unsigned int: [%u]\n", ui);
-	ft_printf("\n");
-	ft_printf("hexadecimal x: [%x]\n", x);
-	ft_printf("\n");
-	ft_printf("hexadecimal X: [%X]\n", x);
-}
+// int main(void)
+// {
+// 	char *str = "hello";
+// 	char c = 'c';
+// 	int i = 34;
+// 	int ui = -34;
+// 	int x = 11;
+	
+// 	ft_printf("string: [%s]\n", str);
+// 	ft_printf("\n");
+// 	ft_printf("char: [%c]\n", c);
+// 	ft_printf("\n");
+// 	ft_printf("int: [%i]\n", i);
+// 	ft_printf("\n");
+// 	ft_printf("mine unsigned int: [%u]\n", ui);
+// 	ft_printf("\n");
+// 	printf("real unsigned int: [%u]\n", ui);
+// 	ft_printf("\n");
+// 	ft_printf("hexadecimal x: [%x]\n", x);
+// 	ft_printf("\n");
+// 	ft_printf("hexadecimal X: [%X]\n", x);
+// }
