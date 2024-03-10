@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_place_holder_utils.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
+/*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 14:58:22 by marbaron          #+#    #+#             */
-/*   Updated: 2024/03/09 15:32:08 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/03/10 17:05:31 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,25 +70,47 @@ size_t	ft_unsigned_fd_pf(unsigned int n, int fd)
 }
 
 
+
 /* %x ft_puthex_fd */
-/* %X ft_putheX_fd */
-size_t ft_putnbr_base(int nbr, char *base)
+size_t	ft_puthex_min(unsigned long n)
 {
 	int i;
-    int base_len;
-    
+
 	i = 0;
-    base_len = ft_strlen(base);
-    if (nbr < 0)
-    {
-        i = i + write(1, "-", 1);
-        nbr = -nbr;
-    }
-    if (nbr >= base_len)
-        ft_putnbr_base(nbr / base_len, base);
-    i = i + write(1,&base[nbr % base_len], 1);
+	if (n > 9)
+	{
+		if (n < 16)
+			i = i + ft_putchar_fd_pf((n + 87), 1);
+		else
+		{
+			ft_puthex_min(n / 16);
+			ft_puthex_min(n % 16);
+		}
+	}
+	else
+		i = i + ft_putchar_fd_pf((n + 48), 1);
 	return (i);
 }
 
+/* %X ft_putheX_fd */
+size_t	ft_puthex_maj(unsigned long n)
+{
+	int i;
+
+	i = 0;
+	if (n > 9)
+	{
+		if (n < 16)
+			i = i + ft_putchar_fd_pf((n + 55), 1);
+		else
+		{
+			ft_puthex_maj(n / 16);
+			ft_puthex_maj(n % 16);
+		}
+	}
+	else
+		i = i + ft_putchar_fd_pf((n + 48), 1);
+	return (i);
+}
 
 /* %p ft_putpointer_fd */

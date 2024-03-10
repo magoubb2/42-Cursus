@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
+/*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 10:57:02 by marbaron          #+#    #+#             */
-/*   Updated: 2024/03/08 14:24:33 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/03/10 17:04:26 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,11 @@ int		ft_printf(const char *format, ...);
 size_t	ft_putchar_fd_pf(char c, int fd);
 size_t	ft_putstr_fd_pf(char *s, int fd);
 size_t	ft_putnbr_fd_pf(int n, int fd);
-size_t	ft_putnbr_base(int nbr, char *base);
+// size_t	ft_putnbr_base(int nbr, char *base);
 size_t	ft_unsigned_fd_pf(unsigned int n, int fd);
 int		ft_strlen(char *str);
+size_t	ft_puthex_min(unsigned long n);
+size_t	ft_puthex_maj(unsigned long n);
+
 
 #endif

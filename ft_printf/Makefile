@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+         #
+#    By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/06 13:25:59 by margueriteb       #+#    #+#              #
-#    Updated: 2024/03/08 14:25:12 by marbaron         ###   ########.fr        #
+#    Updated: 2024/03/10 17:08:02 by margueriteb      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
