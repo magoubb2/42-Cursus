@@ -6,7 +6,7 @@
 /*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 11:09:22 by marbaron          #+#    #+#             */
-/*   Updated: 2024/03/12 12:52:03 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/03/12 14:12:15 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,42 +73,52 @@ int ft_printf(const char *format, ...)
 			print = print + ft_putchar_pf(format[i]);
 		i++;
 	}
-	// printf("\n");
-	// printf("i: %i\n", i);
-	// printf("\n");
-	// printf("print: %i\n", print);
-	// printf("\n");
+	printf("\n");
+	printf("i: %i\n", i);
+	printf("\n");
+	printf("print: %i\n", print);
+	printf("\n");
 	va_end(args);
 	return (print);
 }
 
 // int main(void)
 // {
-// 	char *str = "hello world";
-// 	char c = 'c';
-// 	int i = 34;
-// 	int ui = -1;
-// 	int x = -10;
+	// char *str = "hello world";
+	// char c = 'c';
+	// int i = 34;
+	// int ui = -1;
+	// int x = -10;
 	
-// 	ft_printf("test\n");
-// 	ft_printf(" [%s] ", str);
-// 	ft_printf("string: [%s]\n", str);
-// 	ft_printf("\n");
-// 	ft_printf("char: [%c]\n", c);
-// 	ft_printf("\n");
-// 	ft_printf("int: [%i]\n", i);
-// 	ft_printf("\n");
-// 	ft_printf("mine unsigned int: [%u]\n", ui);
-// 	printf("real unsigned int: [%u]\n", ui);
-// 	ft_printf("\n");
-// 	printf("real hexadecimal x: [%x]\n", x);
-// 	printf("real hexadecimal x: [%X]\n", x);
-// 	ft_printf("my hexadecimal x: [%x]\n", x);
-// 	ft_printf("my hexadecimal x: [%X]\n", x);
-// 	printf("\n");
-// 	ft_printf("my pointer: [%p]\n", "hello");
-// 	printf("real pointer: [%p]\n", "hello");
-// 	ft_printf("\n");
-// 	ft_printf("mine test: %%\n");
-// 	printf("real test: %%\n");
+	// ft_printf("test\n");
+	// ft_printf(" [%s] ", str);
+	// ft_printf("string: [%s]\n", str);
+	// ft_printf("\n");
+	// ft_printf("char: [%c]\n", c);
+	// ft_printf("\n");
+	// ft_printf("int: [%i]\n", i);
+	// ft_printf("\n");
+	// ft_printf("mine unsigned int: [%u]\n", ui);
+	// printf("real unsigned int: [%u]\n", ui);
+	// ft_printf("\n");
+	// printf("real hexadecimal x: [%x]\n", x);
+	// printf("real hexadecimal x: [%X]\n", x);
+	// ft_printf("my hexadecimal x: [%x]\n", x);
+	// ft_printf("my hexadecimal x: [%X]\n", x);
+	// printf("\n");
+	// printf("real pointer: [%p]\n", "hello");
+	// ft_printf("my pointer: [%p]\n", "hello");
+	// // printf("real pointer: [%p]\n", LONG_MIN);
+	// // ft_printf("my pointer: [%p]\n", LONG_MIN);
+	// ft_printf("\n");
+	// printf("real pointer: [%p]\n", (void *)-14523);
+	// ft_printf("my pointer: [%p]\n", (void *)-14523);
+	// printf("%p\n", (void *)-14523);
+	// printf("%p\n", "");
+	// ft_printf("%p", (void *)-14523);
+	// printf("%p\n", "");
+	// ft_printf("%p", "");
+	// ft_printf("\n");
+	// ft_printf("mine test: %%\n");
+	// printf("real test: %%\n");
 // }

@@ -6,7 +6,7 @@
 /*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 14:58:22 by marbaron          #+#    #+#             */
-/*   Updated: 2024/03/12 12:52:25 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/03/12 14:00:44 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,20 +91,20 @@ size_t ft_pointer(void *ptr)
 	unsigned long long num;
 
 	len = 0;
-	num = (unsigned long long)ptr;
 	i = 0;
-	while (num != 0)
-	{
-		len++;
-		num = num / 16;
-	}
+	num = (long long)ptr;
+	// while (num != 0)
+	// {
+	// 	len++;
+	// 	num = num / 16;
+	// }
 	i = i + write(1, "0x", 2);
 	if (ptr == 0)
 		i = i + write(1, "0", 1);
 	else
 	{
-		ft_puthex((unsigned long long)ptr, 0);
-		i = i + len;
+		i  = i + ft_puthex((unsigned long long)ptr, 0);
+		// i = len;
 	}
 	return (i);
 }
