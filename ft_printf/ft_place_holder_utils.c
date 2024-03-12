@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_place_holder_utils.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
+/*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 14:58:22 by marbaron          #+#    #+#             */
-/*   Updated: 2024/03/12 14:00:44 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/03/12 16:35:58 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ size_t	ft_putnbr_pf(long long n, int not_unsigned)
 }
 
 /* %x && %X ft_puthex */
-size_t	ft_puthex(unsigned int n, int letter)
+size_t	ft_puthex(unsigned long n, int letter)
 {
 	int i;
 
@@ -86,13 +86,13 @@ size_t	ft_puthex(unsigned int n, int letter)
 /* %p ft_putpointer_pf */
 size_t ft_pointer(void *ptr)
 {
-	int len;
+	// int len;
 	int i;
-	unsigned long long num;
+	// unsigned long long num;
 
-	len = 0;
+	// len = 0;
 	i = 0;
-	num = (long long)ptr;
+	// num = (long long)ptr;
 	// while (num != 0)
 	// {
 	// 	len++;
