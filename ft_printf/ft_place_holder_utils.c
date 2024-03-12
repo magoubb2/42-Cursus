@@ -6,7 +6,7 @@
 /*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 14:58:22 by marbaron          #+#    #+#             */
-/*   Updated: 2024/03/12 11:39:52 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/03/12 12:52:25 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,7 @@ size_t	ft_putnbr_pf(long long n, int not_unsigned)
 	return (i);
 }
 
-/* %x ft_puthex */
-/* %X ft_putheX */
+/* %x && %X ft_puthex */
 size_t	ft_puthex(unsigned int n, int letter)
 {
 	int i;
@@ -85,3 +84,27 @@ size_t	ft_puthex(unsigned int n, int letter)
 }
 
 /* %p ft_putpointer_pf */
+size_t ft_pointer(void *ptr)
+{
+	int len;
+	int i;
+	unsigned long long num;
+
+	len = 0;
+	num = (unsigned long long)ptr;
+	i = 0;
+	while (num != 0)
+	{
+		len++;
+		num = num / 16;
+	}
+	i = i + write(1, "0x", 2);
+	if (ptr == 0)
+		i = i + write(1, "0", 1);
+	else
+	{
+		ft_puthex((unsigned long long)ptr, 0);
+		i = i + len;
+	}
+	return (i);
+}

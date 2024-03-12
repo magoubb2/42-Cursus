@@ -6,11 +6,13 @@
 /*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 11:09:22 by marbaron          #+#    #+#             */
-/*   Updated: 2024/03/12 11:42:51 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/03/12 12:52:03 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+/* NEED TO HANDLE ERROR -> PRINTF SHOULD RETURN -1 IF IT ENCOUNTERS AN ERROR */
 
 /* Function that convert each variable type */
 static int convert(va_list args, const char place_holder)
@@ -30,7 +32,6 @@ static int convert(va_list args, const char place_holder)
 	// %u -> ft_putnbr_pf
 	else if (place_holder == 'u')
 		// Convert the place holder for a unsigned int.
-		// return (ft_unsigned_pf(va_arg(args, unsigned int)));
 		return (ft_putnbr_pf(va_arg(args, unsigned int), 0));
 	// %x -> ft_puthex
 	else if (place_holder == 'x')
@@ -41,8 +42,9 @@ static int convert(va_list args, const char place_holder)
 		// Convert the place holder for a integer as an hexadecimal in upper case.
 		return (ft_puthex(va_arg(args, unsigned int), 1));
 	// %p -> ft_putpointer_pf
-	// if (place_holder == 'p')
+	if (place_holder == 'p')
 		// Convert the place holder for a pointer's address
+		return(ft_pointer(va_arg(args, void *)));
 	else if (place_holder == '%')
 		return (ft_putchar_pf('%'));
 	return (0);
@@ -82,7 +84,7 @@ int ft_printf(const char *format, ...)
 
 // int main(void)
 // {
-// 	char *str = "hello";
+// 	char *str = "hello world";
 // 	char c = 'c';
 // 	int i = 34;
 // 	int ui = -1;
@@ -99,15 +101,13 @@ int ft_printf(const char *format, ...)
 // 	ft_printf("mine unsigned int: [%u]\n", ui);
 // 	printf("real unsigned int: [%u]\n", ui);
 // 	ft_printf("\n");
-// 	ft_printf("\n");
-// 	printf("real hexadecimal x: [%lx]\n", LONG_MAX);
-// 	// printf("real hexadecimal x: [%lx]\n", );
-// 	printf("real hexadecimal X: [%lX]\n", LONG_MIN);
+// 	printf("real hexadecimal x: [%x]\n", x);
+// 	printf("real hexadecimal x: [%X]\n", x);
 // 	ft_printf("my hexadecimal x: [%x]\n", x);
-// 	ft_printf("my hexadecimal X: [%X]\n", LONG_MIN);
+// 	ft_printf("my hexadecimal x: [%X]\n", x);
 // 	printf("\n");
-// 	ft_printf("%X", LONG_MAX);
-// 	printf("\n");
+// 	ft_printf("my pointer: [%p]\n", "hello");
+// 	printf("real pointer: [%p]\n", "hello");
 // 	ft_printf("\n");
 // 	ft_printf("mine test: %%\n");
 // 	printf("real test: %%\n");
