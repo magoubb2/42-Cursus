@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
+/*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 11:09:22 by marbaron          #+#    #+#             */
-/*   Updated: 2024/03/10 17:04:44 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/03/12 09:53:52 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,11 @@ static int convert(va_list args, const char place_holder)
 	// %x -> ft_puthex_fd
 	else if (place_holder == 'x')
 		// Convert the place holder for a integer as an hexadecimal in lower case.
-		// return (ft_putnbr_base(va_arg(args, unsigned int), "0123456789abcdef"));
-		// return (ft_putnbr_base(va_arg(args, unsigned int), "0123456789abcdef"));
-		return (ft_puthex_min(va_arg(args, unsigned int)));
+		return (ft_puthex_min(va_arg(args, unsigned long)));
 	// %X -> ft_putheX_fd
 	else if (place_holder == 'X')
 		// Convert the place holder for a integer as an hexadecimal in upper case.
-		return (ft_puthex_maj(va_arg(args, unsigned int)));
+		return (ft_puthex_maj(va_arg(args, unsigned long)));
 	// %p -> ft_putpointer_fd
 	// if (place_holder == 'p')
 		// Convert the place holder for a pointer's address
@@ -72,36 +70,42 @@ int ft_printf(const char *format, ...)
 			print = print + ft_putchar_fd_pf(format[i], 1);
 		i++;
 	}
+	// printf("\n");
 	// printf("i: %i\n", i);
+	// printf("\n");
 	// printf("print: %i\n", print);
-	
+	// printf("\n");
 	va_end(args);
 	return (print);
 }
 
 // int main(void)
 // {
-// 	char *str = "hello";
-// 	char c = 'c';
-// 	int i = 34;
-// 	int ui = -34;
-// 	int x = -1;
+	// char *str = "hello";
+	// char c = 'c';
+	// int i = 34;
+	// int ui = -34;
+	// int x = -10;
 	
-// 	ft_printf("test\n");
-// 	ft_printf(" [%s] ", str);
-// 	ft_printf("string: [%s]\n", str);
-// 	ft_printf("\n");
-// 	ft_printf("char: [%c]\n", c);
-// 	ft_printf("\n");
-// 	ft_printf("int: [%i]\n", i);
-// 	ft_printf("\n");
-// 	ft_printf("mine unsigned int: [%u]\n", ui);
-// 	ft_printf("\n");
-// 	ft_printf("\n");
-// 	printf("real hexadecimal x: [%x]\n", x);
-// 	ft_printf("my hexadecimal x: [%x]\n", x);
-// 	ft_printf("my hexadecimal X: [%X]\n", x);
-// 	ft_printf("\n");
-// 	ft_printf("mine test: %%\n");
-// 	printf("real test: %%\n");
+	// ft_printf("test\n");
+	// ft_printf(" [%s] ", str);
+	// ft_printf("string: [%s]\n", str);
+	// ft_printf("\n");
+	// ft_printf("char: [%c]\n", c);
+	// ft_printf("\n");
+	// ft_printf("int: [%i]\n", i);
+	// ft_printf("\n");
+	// ft_printf("mine unsigned int: [%u]\n", ui);
+	// ft_printf("\n");
+	// ft_printf("\n");
+	// printf("real hexadecimal x: [%x]\n", x);
+	// printf("real hexadecimal X: [%X]\n", x);
+	// ft_printf("my hexadecimal x: [%x]\n", x);
+	// ft_printf("my hexadecimal X: [%X]\n", x);
+	// printf("\n");
+	// ft_printf("%X", x);
+	// printf("\n");
+	// ft_printf("\n");
+	// ft_printf("mine test: %%\n");
+	// printf("real test: %%\n");
 // }

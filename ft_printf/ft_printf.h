@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
+/*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 10:57:02 by marbaron          #+#    #+#             */
-/*   Updated: 2024/03/10 17:04:26 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/03/11 16:19:06 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

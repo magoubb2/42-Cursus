@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_place_holder_utils.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
+/*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 14:58:22 by marbaron          #+#    #+#             */
-/*   Updated: 2024/03/10 17:05:31 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/03/12 09:53:18 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,8 +83,8 @@ size_t	ft_puthex_min(unsigned long n)
 			i = i + ft_putchar_fd_pf((n + 87), 1);
 		else
 		{
-			ft_puthex_min(n / 16);
-			ft_puthex_min(n % 16);
+			i = i + ft_puthex_min(n / 16);
+			i = i + ft_puthex_min(n % 16);
 		}
 	}
 	else
@@ -104,8 +104,8 @@ size_t	ft_puthex_maj(unsigned long n)
 			i = i + ft_putchar_fd_pf((n + 55), 1);
 		else
 		{
-			ft_puthex_maj(n / 16);
-			ft_puthex_maj(n % 16);
+			i = i + ft_puthex_maj(n / 16);
+			i = i + ft_puthex_maj(n % 16);
 		}
 	}
 	else
