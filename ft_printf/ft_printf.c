@@ -6,7 +6,7 @@
 /*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 11:09:22 by marbaron          #+#    #+#             */
-/*   Updated: 2024/03/12 09:53:52 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/03/12 10:45:43 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,11 @@ static int convert(va_list args, const char place_holder)
 	// %x -> ft_puthex_fd
 	else if (place_holder == 'x')
 		// Convert the place holder for a integer as an hexadecimal in lower case.
-		return (ft_puthex_min(va_arg(args, unsigned long)));
+		return (ft_puthex(va_arg(args, unsigned int), 0));
 	// %X -> ft_putheX_fd
 	else if (place_holder == 'X')
 		// Convert the place holder for a integer as an hexadecimal in upper case.
-		return (ft_puthex_maj(va_arg(args, unsigned long)));
+		return (ft_puthex(va_arg(args, unsigned int), 1));
 	// %p -> ft_putpointer_fd
 	// if (place_holder == 'p')
 		// Convert the place holder for a pointer's address
@@ -98,12 +98,12 @@ int ft_printf(const char *format, ...)
 	// ft_printf("mine unsigned int: [%u]\n", ui);
 	// ft_printf("\n");
 	// ft_printf("\n");
-	// printf("real hexadecimal x: [%x]\n", x);
-	// printf("real hexadecimal X: [%X]\n", x);
-	// ft_printf("my hexadecimal x: [%x]\n", x);
-	// ft_printf("my hexadecimal X: [%X]\n", x);
+	// printf("real hexadecimal x: [%lx]\n", LONG_MAX);
+	// printf("real hexadecimal X: [%lX]\n", LONG_MIN);
+	// ft_printf("my hexadecimal x: [%x]\n", LONG_MAX);
+	// ft_printf("my hexadecimal X: [%X]\n", LONG_MIN);
 	// printf("\n");
-	// ft_printf("%X", x);
+	// ft_printf("%X", LONG_MAX);
 	// printf("\n");
 	// ft_printf("\n");
 	// ft_printf("mine test: %%\n");

@@ -6,7 +6,7 @@
 /*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 14:58:22 by marbaron          #+#    #+#             */
-/*   Updated: 2024/03/12 09:53:18 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/03/12 10:45:19 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,28 +72,8 @@ size_t	ft_unsigned_fd_pf(unsigned int n, int fd)
 
 
 /* %x ft_puthex_fd */
-size_t	ft_puthex_min(unsigned long n)
-{
-	int i;
-
-	i = 0;
-	if (n > 9)
-	{
-		if (n < 16)
-			i = i + ft_putchar_fd_pf((n + 87), 1);
-		else
-		{
-			i = i + ft_puthex_min(n / 16);
-			i = i + ft_puthex_min(n % 16);
-		}
-	}
-	else
-		i = i + ft_putchar_fd_pf((n + 48), 1);
-	return (i);
-}
-
 /* %X ft_putheX_fd */
-size_t	ft_puthex_maj(unsigned long n)
+size_t	ft_puthex(unsigned int n, int letter)
 {
 	int i;
 
@@ -101,11 +81,16 @@ size_t	ft_puthex_maj(unsigned long n)
 	if (n > 9)
 	{
 		if (n < 16)
-			i = i + ft_putchar_fd_pf((n + 55), 1);
+		{
+			if (letter)
+				i = i + ft_putchar_fd_pf((n + 55), 1);
+			else if (!letter)
+				i = i + ft_putchar_fd_pf((n + 87), 1);
+		}
 		else
 		{
-			i = i + ft_puthex_maj(n / 16);
-			i = i + ft_puthex_maj(n % 16);
+			i = i + ft_puthex(n / 16, letter);
+			i = i + ft_puthex(n % 16, letter);
 		}
 	}
 	else
