@@ -1,4 +1,4 @@
-/* ************************************************************************** */
+// /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_place_holder_utils.c                            :+:      :+:    :+:   */
@@ -6,7 +6,7 @@
 /*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 14:58:22 by marbaron          #+#    #+#             */
-/*   Updated: 2024/03/14 14:16:50 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/03/14 14:26:59 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,13 @@
 /* %c ft_putchar_pf */
 int ft_putchar_pf(char c)
 {
-	return (write(1, &c, 1));
+	int res;
+
+	res = write(1, &c, 1);
+	if (res == -1)
+		return (-1);
+	else
+		return (res);
 }
 
 /* %s ft_putstr_pf */
@@ -70,10 +76,8 @@ int	ft_puthex(unsigned long n, int letter)
 			// If letter is true(0) -> is uppercase
 			if (letter)
 				i = i + ft_putchar_pf((n + 55));
-			if (i == -1)
-				return (-1);
 			// If letter is false(1) -> is lowercase
-			else if (!letter)
+			if (!letter)
 				i = i + ft_putchar_pf((n + 87));
 		}
 		else
