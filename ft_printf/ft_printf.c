@@ -6,7 +6,7 @@
 /*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 11:09:22 by marbaron          #+#    #+#             */
-/*   Updated: 2024/03/15 14:20:42 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/03/15 14:40:02 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,10 +61,10 @@ int ft_printf(const char *format, ...)
 	int conv;
 	va_list args;
 	
-	i = 0;
+	i = -1;
 	print = 0;
 	va_start(args, format);
-	while (format[i])
+	while (format[++i])
 	{
 		if (format[i] == '%')
 		{
@@ -78,7 +78,6 @@ int ft_printf(const char *format, ...)
 			print = print + ft_putchar_pf(format[i]);
 		if (print == -1)
 			return (-1);
-		i++;
 	}
 	va_end(args);
 	return (print);
