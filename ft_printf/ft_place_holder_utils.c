@@ -15,13 +15,7 @@
 /* %c ft_putchar_pf */
 int ft_putchar_pf(char c)
 {
-	int res;
-
-	res = write(1, &c, 1);
-	if (res == -1)
-		return (-1);
-	else
-		return (res);
+	return (write(1, &c, 1));
 }
 
 /* %s ft_putstr_pf */
@@ -83,7 +77,11 @@ int	ft_puthex(unsigned long n, int letter)
 		else
 		{
 			i = i + ft_puthex(n / 16, letter);
+			if (i == -1)
+				return (-1);
 			i = i + ft_puthex(n % 16, letter);
+			if (i == -1)
+				return (-1);
 		}
 	}
 	else

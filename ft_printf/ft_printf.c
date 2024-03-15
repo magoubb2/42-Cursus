@@ -6,7 +6,7 @@
 /*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 11:09:22 by marbaron          #+#    #+#             */
-/*   Updated: 2024/03/14 13:50:40 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/03/15 14:20:42 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ static int convert(va_list args, const char place_holder)
 	return (0);
 }
 
+
 /* Function that execute */
 int ft_printf(const char *format, ...)
 {
@@ -59,9 +60,7 @@ int ft_printf(const char *format, ...)
 	int print;
 	int conv;
 	va_list args;
-
-	if (!format)
-		return (-1);
+	
 	i = 0;
 	print = 0;
 	va_start(args, format);
@@ -72,17 +71,13 @@ int ft_printf(const char *format, ...)
 			conv = convert(args, format[i + 1]);
 			if (conv == -1)
 				return (-1);
-			// Convert the place holder.
 			print = print + conv;
 			i++;
 		}
 		else
-		{
 			print = print + ft_putchar_pf(format[i]);
-			// In case of an error occuring.
-			if (print == -1)
-				return (-1);
-		}
+		if (print == -1)
+			return (-1);
 		i++;
 	}
 	va_end(args);

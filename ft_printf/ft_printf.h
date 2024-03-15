@@ -6,7 +6,7 @@
 /*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 10:57:02 by marbaron          #+#    #+#             */
-/*   Updated: 2024/03/14 13:52:21 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/03/15 13:28:03 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 
 int		ft_printf(const char *format, ...);
 int		ft_strlen(char *str);
+int		check_error(int check);
 int		ft_putchar_pf(char c);
 int		ft_putstr_pf(char *s);
 int		ft_putnbr_pf(long long n, int not_unsigned);
