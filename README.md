@@ -52,7 +52,7 @@ Overall, the get_next_line project provides students with practical experience i
 
 -----------------------------------------------------------------
 
-## Get_next_line 🖨
+## Ft_printf 🖨
 Description:
 
 The goal of this project is pretty straightforward. You will recode printf().
