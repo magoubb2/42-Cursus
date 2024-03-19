@@ -61,4 +61,8 @@ The goal of this project is pretty straightforward. You will recode printf().
 
 #### This implementation of ft_printf must handle these place holders:
 
-** hello.
+> cspdiuxX%
+
+<pre>
+hello
+</pre>
