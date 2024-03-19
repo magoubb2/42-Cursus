@@ -6,8 +6,9 @@
 |     **Project**     |           **Score**            |           ...           |
 |:-------------------:|:------------------------------:|:-----------------------:|
 |     ```Libft```     |           ```100%```           |    :white_check_mark:   |
-| ```Get_Next_Line``` | ```Waiting for evaluation...```|:arrows_counterclockwise:|
+| ```Get_Next_Line``` |           ```101%```           |    :white_check_mark:   |
 |   ```ft_printf```   | ```Waiting for evaluation...```|:arrows_counterclockwise:|
+|  ```Born2beroot```  | ```waiting for evaluation...```|:arrows_counterclockwise:|
 ## Libft :book:
 Description:
 
