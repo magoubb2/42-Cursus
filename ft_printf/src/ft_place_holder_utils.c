@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../include/ft_printf.h"
 
 /* %c ft_putchar_pf */
 int ft_putchar_pf(char c)
@@ -67,10 +67,8 @@ int	ft_puthex(unsigned long n, int letter)
 	{
 		if (n < 16)
 		{
-			// If letter is true(0) -> is uppercase
 			if (letter)
 				i = i + ft_putchar_pf((n + 55));
-			// If letter is false(1) -> is lowercase
 			if (!letter)
 				i = i + ft_putchar_pf((n + 87));
 		}

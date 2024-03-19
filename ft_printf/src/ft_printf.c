@@ -6,52 +6,36 @@
 /*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 11:09:22 by marbaron          #+#    #+#             */
-/*   Updated: 2024/03/15 14:40:02 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/03/19 12:28:49 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-
-/* NEED TO HANDLE ERROR -> PRINTF SHOULD RETURN -1 IF IT ENCOUNTERS AN ERROR */
+#include "../include/ft_printf.h"
 
 /* Function that convert each variable type */
 static int convert(va_list args, const char place_holder)
 {
-	// %c -> ft_putchar_pf
+	int nb_args;
+
+	nb_args = 0;
 	if (place_holder == 'c')
-		// Convert the place holder for a char.
 		return (ft_putchar_pf(va_arg(args, int)));
-	// %s -> ft_putstr_pf
 	else if (place_holder == 's')
-		// Convert the place holder for a string.
 		return (ft_putstr_pf(va_arg(args, char *)));
-	// %i -> ft_putnbr_pf || %d -> ft_putnbr_pf
 	else if (place_holder == 'i' || place_holder == 'd')
-		// Convert the place holder for a int.
 		return (ft_putnbr_pf(va_arg(args, int), 1));
-	// %u -> ft_putnbr_pf
 	else if (place_holder == 'u')
-		// Convert the place holder for a unsigned int.
 		return (ft_putnbr_pf(va_arg(args, unsigned int), 0));
-	// %x -> ft_puthex
 	else if (place_holder == 'x')
-		// Convert the place holder for a integer as an hexadecimal in lower case.
 		return (ft_puthex(va_arg(args, unsigned int), 0));
-	// %X -> ft_puthex
 	else if (place_holder == 'X')
-		// Convert the place holder for a integer as an hexadecimal in upper case.
 		return (ft_puthex(va_arg(args, unsigned int), 1));
-	// %p -> ft_putpointer_pf
 	else if (place_holder == 'p')
-		// Convert the place holder for a pointer's address
 		return(ft_pointer(va_arg(args, void *)));
 	else if (place_holder == '%')
 		return (ft_putchar_pf('%'));
-	else
-		return (-1);
 	return (0);
 }
-
 
 /* Function that execute */
 int ft_printf(const char *format, ...)
@@ -83,8 +67,8 @@ int ft_printf(const char *format, ...)
 	return (print);
 }
 
-// int main(void)
-// {
+int main(void)
+{
 	// char *str = "hello world";
 	// char c = 'a';
 	// int i = 34;
@@ -116,6 +100,6 @@ int ft_printf(const char *format, ...)
 	// ft_printf("\n");
 	// ft_printf("mine test: %%\n");
 	// printf("real test: %%\n");
-	// ft_printf("mine: %%c", c);
-	// printf("real: %%c", c);
-// }
+	ft_printf("mine: %%\n");
+	// printf("real: %%\n");
+}

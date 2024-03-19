@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+         #
+#    By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/06 13:25:59 by margueriteb       #+#    #+#              #
-#    Updated: 2024/03/10 17:08:02 by margueriteb      ###   ########.fr        #
+#    Updated: 2024/03/19 12:27:59 by marbaron         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 
-SRCS = ft_printf.c ft_place_holder_utils.c ft_printf_utils.c
+SRCS = ./src/ft_printf.c ./src/ft_place_holder_utils.c ./src/ft_printf_utils.c
 
 OBJS =	${SRCS:.c=.o}
 
