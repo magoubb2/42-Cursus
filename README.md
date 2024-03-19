@@ -58,3 +58,7 @@ Description:
 The goal of this project is pretty straightforward. You will recode printf().
 
 > the repository: https://github.com/magoubb2/42-Cursus/tree/main/ft_printf
+
+#### This implementation of ft_printf must handle these place holders:
+
+** hello.
