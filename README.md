@@ -73,4 +73,9 @@ The goal of this project is pretty straightforward. You will recode printf().
 	%x	// For hexadecimal (lowercase).
 	%X	// For hexadecimal (uppercase).
 ```
+### This function will be compared against the original printf()
+> This implementation will need to execute the same as the real one for the specified place holders.
 
+-----------------------------------------------------------------
+
+> Born2beroot done but need to be evaluated.
