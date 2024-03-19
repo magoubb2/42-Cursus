@@ -63,21 +63,40 @@ The goal of this project is pretty straightforward. You will recode printf().
 
 > cspdiuxX%
 
-<pre>
-	<!-- // For one char. -->
+```c
+	// For one char.
 	%c
-	<!-- // For a string. -->
+	// For a string.
 	%s
-	<!-- // For a pointer. -->
+	// For a pointer.
 	%p
-	<!-- // For digits. -->
+	// For digits.
 	%d
-	<!-- // For integers. -->
+	// For integers.
 	%i
-	<!-- // For unsigned. -->
+	// For unsigned.
 	%u
-	<!-- // For hexadecimal (lowercase). -->
+	// For hexadecimal (lowercase).
 	%x
-	<!-- // For hexadecimal (uppercase). -->
+	// For hexadecimal (uppercase).
+	%X
+``````
+
+<pre>
+	// For one char.
+	%c
+	// For a string.
+	%s
+	// For a pointer.
+	%p
+	// For digits.
+	%d
+	// For integers.
+	%i
+	// For unsigned.
+	%u
+	// For hexadecimal (lowercase).
+	%x
+	// For hexadecimal (uppercase).
 	%X
 </pre>
