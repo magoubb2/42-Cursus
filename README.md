@@ -9,6 +9,7 @@
 | ```Get_Next_Line``` |           ```101%```           |    :white_check_mark:   |
 |   ```ft_printf```   | ```Waiting for evaluation...```|:arrows_counterclockwise:|
 |  ```Born2beroot```  | ```waiting for evaluation...```|:arrows_counterclockwise:|
+|     ```Pipex```     |     ```Work in progress```     |       :hourglass:       |
 ## Libft :book:
 Description:
 
@@ -79,3 +80,4 @@ The goal of this project is pretty straightforward. You will recode printf().
 -----------------------------------------------------------------
 
 > Born2beroot done but need to be evaluated.
+> Working on Pipex.
