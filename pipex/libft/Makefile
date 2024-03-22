@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+         #
+#    By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/06 13:25:59 by margueriteb       #+#    #+#              #
-#    Updated: 2024/02/22 16:20:24 by marbaron         ###   ########.fr        #
+#    Updated: 2024/03/22 11:48:18 by margueriteb      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,8 @@ SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 	ft_strncmp.c ft_memchr.c ft_memcmp.c ft_strnstr.c ft_atoi.c ft_calloc.c\
 	ft_strdup.c ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c\
 	ft_strmapi.c ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c\
-	ft_putnbr_fd.c
+	ft_putnbr_fd.c ./ft_printf/src/ft_printf.c \
+	./ft_printf/src/ft_place_holder_utils.c ./ft_printf/src/ft_printf_utils.c
 	
 
 OBJS = ${SRCS:.c=.o}
