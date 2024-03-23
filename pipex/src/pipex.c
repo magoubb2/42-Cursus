@@ -6,11 +6,11 @@
 /*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 11:02:01 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/03/23 17:55:21 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/03/23 17:57:45 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pipex.h"
+#include "../include/pipex.h"
 
 
 /* The command we have to execute : < file1 cmd1 | cmd2 > file2 */

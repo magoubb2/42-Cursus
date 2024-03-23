@@ -6,13 +6,13 @@
 #    By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/22 10:43:29 by margueriteb       #+#    #+#              #
-#    Updated: 2024/03/22 11:01:57 by margueriteb      ###   ########.fr        #
+#    Updated: 2024/03/23 17:57:33 by margueriteb      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = pipex
 
-SRC = 
+SRC = ./src/pipex.c
 
 OBJ = $(SRC:.c=.o)
 
