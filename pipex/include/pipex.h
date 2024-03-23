@@ -6,7 +6,7 @@
 /*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 11:02:06 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/03/23 17:49:21 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/03/23 18:00:41 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <unistd.h>
 #include <sys/wait.h>
+#include <fcntl.h>
 
 typedef struct s_data
 {

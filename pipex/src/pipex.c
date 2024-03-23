@@ -6,7 +6,7 @@
 /*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 11:02:01 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/03/23 17:57:45 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/03/23 18:20:52 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,25 +30,33 @@
 
 int main(int argc, char **argv, char **env) 
 {
+
+    t_data data;
+    
     if (argc != 5)
         // return error
 
     // 1). Check for errors.
     
     // 2). Initialise infile.
-    
+    // Open argv[1] which is the first fd (in this case "infile"). Open it in read
+    // only mode.
+    data.infile = open(argv[1], O_RDONLY);
     // 3). Initialise outfile.
-
+    // Open argv[argc - 1] which mean the last fd (in this case, "outfile").
+    // Using the open function we want to write and read (O_RDWR) in this file and 
+    // create it if it does not exist(O_CREAT). And these are the permission 0000644.
+    data.outfile = open(argv[argc - 1], O_CREAT | O_RDWR, 0000644);
     // 4). Create necessary pipe.
-
+    pipe(data.fd);
     // 5). Get the path.
-
+    data.path = 
     // 6).Get the command path.
-
-    // 7). First child process.
+    data.path_to_cmd = 
+    // 7). First child process.(fork)
         // Execute the first command.
     
-    // 8).Second child process.
+    // 8).Second child process.(fork)
         // Execute second command.
     
     // 9).
