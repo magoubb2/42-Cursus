@@ -6,7 +6,7 @@
 #    By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/22 10:43:29 by margueriteb       #+#    #+#              #
-#    Updated: 2024/03/23 17:57:33 by margueriteb      ###   ########.fr        #
+#    Updated: 2024/03/24 14:22:15 by margueriteb      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,11 +26,11 @@ LIBFTD = libft/
 all : $(NAME)
 $(NAME): $(OBJ)
 	$(MAKE) -C $(LIBFTD) 
-	$(CC) $(CFLAG) $(LIBFTD)$(LIBFT) -o 
+	$(CC) $(CFLAG) $(LIBFTD)$(LIBFT) $(OBJ) -o $(NAME)
 	
 clean:
 	@$(MAKE) -C $(LIBFTD)
-	@$(RM) $(OBJS)
+	@$(RM) $(OBJ) $(NAME)
 	
 fclean: clean
 	@$(RM)

@@ -1,7 +1,7 @@
 Makefile
 img
+include
 infile
 libft
 outfile
-pipex.c
-pipex.h
+src

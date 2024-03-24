@@ -6,7 +6,7 @@
 /*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 11:09:22 by marbaron          #+#    #+#             */
-/*   Updated: 2024/03/22 11:48:52 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/03/24 14:21:18 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,8 +64,8 @@ int ft_printf(const char *format, ...)
 	return (print);
 }
 
-int main(void)
-{
+// int main(void)
+// {
 	// char *str = "hello world";
 	// char c = 'a';
 	// int i = 34;
@@ -97,6 +97,6 @@ int main(void)
 	// ft_printf("\n");
 	// ft_printf("mine test: %%\n");
 	// printf("real test: %%\n");
-	ft_printf("mine: %%\n");
+	// ft_printf("mine: %%\n");
 	// printf("real: %%\n");
-}
+// }

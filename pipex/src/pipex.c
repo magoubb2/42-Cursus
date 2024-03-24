@@ -6,7 +6,7 @@
 /*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 11:02:01 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/03/23 18:20:52 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/03/24 15:03:54 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,36 @@
 
 /* Wait for all the process to end before writing to the outfile. */
 
+// Returns the value of env.
+static char *path(char **env)
+{
+    int i;
 
+    i = 0;
+    // Loop until the end of the env array is reached.
+    // Loop through the array of string untils finding the one starting
+    // with "PATH".
+    while (env[i] != NULL)
+    {
+        // If "PATH" is found, return the current str of env.
+        if (ft_strncmp("PATH", env[i], 4) == 0)
+            return(env[i]);
+        // Move to the next str in the array.
+        i++;
+    }
+    // Else return NULL.
+    return (NULL);
+}
+
+    // while (ft_strncmp("PATH", *env, 4))
+    //     env++;
+    // return (*env);
 int main(int argc, char **argv, char **env) 
 {
 
     t_data data;
     
-    if (argc != 5)
+    // if (argc != 5)
         // return error
 
     // 1). Check for errors.
@@ -50,9 +73,12 @@ int main(int argc, char **argv, char **env)
     // 4). Create necessary pipe.
     pipe(data.fd);
     // 5). Get the path.
-    data.path = 
+    
+    data.path = path(env);
+    ft_printf("%s\n", data.path);
     // 6).Get the command path.
-    data.path_to_cmd = 
+    data.get_directory = ft_split(data.path, ':');
+    ft_printf("%s\n", data.get_directory);
     // 7). First child process.(fork)
         // Execute the first command.
     
