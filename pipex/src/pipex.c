@@ -6,7 +6,7 @@
 /*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 11:02:01 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/03/25 11:33:37 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/03/25 13:34:37 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,12 @@
 /* Create the child process for each command. */
 
 /* Wait for all the process to end before writing to the outfile. */
+
+// First command.
+static void first_child(t_data data, char **argv, char **env)
+{
+    
+}
 
 // Returns the value of env.
 static char *path(char **env)
@@ -48,9 +54,6 @@ static char *path(char **env)
     return (NULL);
 }
 
-    // while (ft_strncmp("PATH", *env, 4))
-    //     env++;
-    // return (*env);
 int main(int argc, char **argv, char **env) 
 {
 
@@ -80,11 +83,13 @@ int main(int argc, char **argv, char **env)
     // Check each path directory for the current command.
     data.get_directory = ft_split(data.path, ':');
     ft_printf("%s\n", data.get_directory[0]);
-    ft_printf("%s\n", data.get_directory[1]);
-    ft_printf("%s\n", data.get_directory[2]);
     // 7). First child process.(fork)
+    // New child process.
+    data.pid_cmd1 = fork();
+    ft_printf("%i\n", data.pid_cmd1);
+    if (data.pid_cmd1 == 0)
         // Execute the first command.
-    
+        first_child(data, argv, env);
     // 8).Second child process.(fork)
         // Execute second command.
     
