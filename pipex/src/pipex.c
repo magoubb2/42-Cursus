@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pipex.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
+/*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 11:02:01 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/03/24 15:03:54 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/03/25 11:33:37 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,12 +73,15 @@ int main(int argc, char **argv, char **env)
     // 4). Create necessary pipe.
     pipe(data.fd);
     // 5). Get the path.
-    
+    // Use path to get the path.
     data.path = path(env);
     ft_printf("%s\n", data.path);
     // 6).Get the command path.
+    // Check each path directory for the current command.
     data.get_directory = ft_split(data.path, ':');
-    ft_printf("%s\n", data.get_directory);
+    ft_printf("%s\n", data.get_directory[0]);
+    ft_printf("%s\n", data.get_directory[1]);
+    ft_printf("%s\n", data.get_directory[2]);
     // 7). First child process.(fork)
         // Execute the first command.
     
