@@ -6,7 +6,7 @@
 /*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 11:02:01 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/03/25 13:34:37 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/03/25 16:19:05 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,12 @@
 /* Wait for all the process to end before writing to the outfile. */
 
 // First command.
-static void first_child(t_data data, char **argv, char **env)
-{
-    
-}
+// static void first_child(t_data data, char **argv, char **env)
+// {
+        //dup2()
+        //close()
+        //execve()
+// }
 
 // Returns the value of env.
 static char *path(char **env)
@@ -78,18 +80,18 @@ int main(int argc, char **argv, char **env)
     // 5). Get the path.
     // Use path to get the path.
     data.path = path(env);
-    ft_printf("%s\n", data.path);
+    ft_printf("path: %s\n", data.path);
     // 6).Get the command path.
     // Check each path directory for the current command.
     data.get_directory = ft_split(data.path, ':');
-    ft_printf("%s\n", data.get_directory[0]);
+    ft_printf("get_directory: %s\n", data.get_directory[0]);
     // 7). First child process.(fork)
     // New child process.
     data.pid_cmd1 = fork();
-    ft_printf("%i\n", data.pid_cmd1);
-    if (data.pid_cmd1 == 0)
+    ft_printf("fork pid_cmd1: %i\n", data.pid_cmd1);
+    // if (data.pid_cmd1 == 0)
         // Execute the first command.
-        first_child(data, argv, env);
+        // first_child(data, argv, env);
     // 8).Second child process.(fork)
         // Execute second command.
     
