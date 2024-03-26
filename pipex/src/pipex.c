@@ -6,34 +6,27 @@
 /*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 11:02:01 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/03/25 16:19:05 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/03/26 11:29:25 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/pipex.h"
 
-
-/* The command we have to execute : < file1 cmd1 | cmd2 > file2 */
-
-/* This project is a programm so it has a main in it. */
-
-/* Check existence of infile and outfile (with the access function) */
-
-/* If the file does not exist and we use the SIR ('<') we create it. */
-
-/* Create the necessary pipe. */
-
-/* Create the child process for each command. */
-
-/* Wait for all the process to end before writing to the outfile. */
-
 // First command.
-// static void first_child(t_data data, char **argv, char **env)
-// {
-        //dup2()
-        //close()
-        //execve()
-// }
+static void first_child(t_data data, char **argv, char **env)
+{
+    (void)data;
+    (void)argv;
+    (void)env;
+    // Replace standart output with the with output file
+    dup2(data.fd[1], 1);
+    // Close unused file.
+    close(data.fd[0]);
+    // Replace standart input with the infile file.
+    dup2(data.infile, 0);
+    // Execute the command.
+    // execve()
+}
 
 // Returns the value of env.
 static char *path(char **env)
@@ -89,10 +82,11 @@ int main(int argc, char **argv, char **env)
     // New child process.
     data.pid_cmd1 = fork();
     ft_printf("fork pid_cmd1: %i\n", data.pid_cmd1);
-    // if (data.pid_cmd1 == 0)
+    if (data.pid_cmd1 == 0)
         // Execute the first command.
-        // first_child(data, argv, env);
+        first_child(data, argv, env);
     // 8).Second child process.(fork)
+    // data.pid_cmd2 = fork();
         // Execute second command.
     
     // 9).

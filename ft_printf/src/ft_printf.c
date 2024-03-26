@@ -6,7 +6,7 @@
 /*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 11:09:22 by marbaron          #+#    #+#             */
-/*   Updated: 2024/03/19 12:28:49 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/03/26 10:02:13 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,8 @@ int ft_printf(const char *format, ...)
 	return (print);
 }
 
-int main(void)
-{
+// int main(void)
+// {
 	// char *str = "hello world";
 	// char c = 'a';
 	// int i = 34;
@@ -100,6 +100,6 @@ int main(void)
 	// ft_printf("\n");
 	// ft_printf("mine test: %%\n");
 	// printf("real test: %%\n");
-	ft_printf("mine: %%\n");
+	// ft_printf("mine: %%\n");
 	// printf("real: %%\n");
-}
+// }
