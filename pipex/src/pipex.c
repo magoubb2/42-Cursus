@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pipex.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
+/*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 11:02:01 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/03/26 11:52:40 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/03/26 16:40:37 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static void first_child(t_data data, char **argv, char **env)
     close(data.fd[0]);
     // Replace standart input with the infile file.
     dup2(data.infile, 0);
-    data.cmd_args = ft_split(argv[1], ' ');
+    data.cmd_args = ft_split(argv[2], ' ');
     ft_printf("current arg: %s\n", data.cmd_args[1]);
     // Execute the command.
     // execve()
@@ -42,7 +42,9 @@ static char *path(char **env)
     {
         // If "PATH" is found, return the current str of env.
         if (ft_strncmp("PATH", env[i], 4) == 0)
-            return(env[i]);
+            // + 5 because we want to skip the first 5 character which are the
+            // "PATH=".
+            return(env[i] + 5);
         // Move to the next str in the array.
         i++;
     }
@@ -74,7 +76,7 @@ int main(int argc, char **argv, char **env)
     // 5). Get the path.
     // Use path to get the path.
     data.path = path(env);
-    ft_printf("path: %s\n", data.path);
+    // ft_printf("path: %s\n", data.path);
     // 6).Get the command path.
     // Check each path directory for the current command.
     data.get_directory = ft_split(data.path, ':');
