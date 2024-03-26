@@ -6,7 +6,7 @@
 /*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 11:02:01 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/03/26 11:29:25 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/03/26 11:52:40 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 // First command.
 static void first_child(t_data data, char **argv, char **env)
 {
-    (void)data;
-    (void)argv;
+    // (void)data;
+    // (void)argv;
     (void)env;
     // Replace standart output with the with output file
     dup2(data.fd[1], 1);
@@ -24,6 +24,8 @@ static void first_child(t_data data, char **argv, char **env)
     close(data.fd[0]);
     // Replace standart input with the infile file.
     dup2(data.infile, 0);
+    data.cmd_args = ft_split(argv[1], ' ');
+    ft_printf("current arg: %s\n", data.cmd_args[1]);
     // Execute the command.
     // execve()
 }
@@ -34,9 +36,8 @@ static char *path(char **env)
     int i;
 
     i = 0;
-    // Loop until the end of the env array is reached.
-    // Loop through the array of string untils finding the one starting
-    // with "PATH".
+    // Loop until the end of the env array is reached. Loop through the array 
+    // of string untils finding the one starting with "PATH".
     while (env[i] != NULL)
     {
         // If "PATH" is found, return the current str of env.
