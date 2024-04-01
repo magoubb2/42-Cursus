@@ -1,4 +1,4 @@
-// /* ************************************************************************** */
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_place_holder_utils.c                            :+:      :+:    :+:   */
@@ -6,19 +6,17 @@
 /*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 14:58:22 by marbaron          #+#    #+#             */
-/*   Updated: 2024/03/14 14:26:59 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/03/28 14:51:47 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
 
-/* %c ft_putchar_pf */
-int ft_putchar_pf(char c)
+int	ft_putchar_pf(char c)
 {
 	return (write(1, &c, 1));
 }
 
-/* %s ft_putstr_pf */
 int	ft_putstr_pf(char *s)
 {
 	if (!s)
@@ -27,7 +25,6 @@ int	ft_putstr_pf(char *s)
 		return (write(1, s, ft_strlen(s)));
 }
 
-/* %i, %d && %u ft_putnbr_pf */
 int	ft_putnbr_pf(long long n, int not_unsigned)
 {
 	int		i;
@@ -57,10 +54,9 @@ int	ft_putnbr_pf(long long n, int not_unsigned)
 	return (i);
 }
 
-/* %x && %X ft_puthex */
 int	ft_puthex(unsigned long n, int letter)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (n > 9)
@@ -87,10 +83,9 @@ int	ft_puthex(unsigned long n, int letter)
 	return (i);
 }
 
-/* %p ft_putpointer_pf */
-int ft_pointer(void *ptr)
+int	ft_pointer(void *ptr)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	i = i + write(1, "0x", 2);

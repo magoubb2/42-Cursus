@@ -6,7 +6,7 @@
 /*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 10:59:54 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/03/08 11:15:44 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/03/29 14:43:08 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -157,14 +157,14 @@ char	*get_next_line(int fd)
 	return (line);
 }
 
-// int main(int argc, char **argv)
-// {
-//     (void)argc;
-//     int fd;
-//     fd = open(argv[1], O_RDONLY);
-//     printf("%s\n", get_next_line(fd));
-//     printf("%s\n", get_next_line(fd));
-//     printf("%s\n", get_next_line(fd));
-//     printf("%s\n", get_next_line(fd));
-//     printf("%s\n", get_next_line(fd));
-// } 
+int main(int argc, char **argv)
+{
+    (void)argc;
+    int fd;
+    fd = open(argv[1], O_RDONLY);
+    printf("%s\n", get_next_line(fd));
+    printf("%s\n", get_next_line(fd));
+    // printf("%s\n", get_next_line(fd));
+    // printf("%s\n", get_next_line(fd));
+    // printf("%s\n", get_next_line(fd));
+} 

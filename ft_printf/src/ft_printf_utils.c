@@ -6,15 +6,15 @@
 /*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 14:18:49 by marbaron          #+#    #+#             */
-/*   Updated: 2024/03/19 12:28:52 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/03/28 14:53:54 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
 
-int ft_strlen(char *str)
+int	ft_strlen(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (!str)

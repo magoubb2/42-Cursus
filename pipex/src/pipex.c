@@ -6,11 +6,25 @@
 /*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 11:02:01 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/03/26 11:52:40 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/04/01 15:13:16 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/pipex.h"
+
+// Function that get's the current command.
+static char *get_current_cmd(char **current_path, char *current_cmd)
+{
+    char *tmp;
+    char *cmd;
+
+    while (*current_path)
+    {
+        tmp = ft_split(*current_path, '/');
+        cmd = ft_strjoin(tmp, current_cmd);
+    }
+    return (cmd);
+}
 
 // First command.
 static void first_child(t_data data, char **argv, char **env)
@@ -21,11 +35,14 @@ static void first_child(t_data data, char **argv, char **env)
     // Replace standart output with the with output file
     dup2(data.fd[1], 1);
     // Close unused file.
+    ft_printf("current arg\n");
     close(data.fd[0]);
     // Replace standart input with the infile file.
     dup2(data.infile, 0);
-    data.cmd_args = ft_split(argv[1], ' ');
-    ft_printf("current arg: %s\n", data.cmd_args[1]);
+    data.cmd_args = ft_split(argv[2], ' ');
+    data.cmd = get_current_cmd(data.path, data.cmd_args[0]);
+    // ft_printf("current arg: %s\n", data.cmd_args[1]);
+    ft_printf("%s\n", data.cmd);
     // Execute the command.
     // execve()
 }
