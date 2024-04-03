@@ -6,7 +6,7 @@
 /*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 11:02:06 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/03/24 14:03:17 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/04/03 10:04:26 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,8 @@ typedef struct s_data
     char **cmd_args;
     char *cmd;
 }   t_data;
+
+void first_child(t_data data, char **argv, char **env);
+void second_child(t_data data, char **argv, char **env);
 
 #endif

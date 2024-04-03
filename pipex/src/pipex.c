@@ -3,50 +3,71 @@
 /*                                                        :::      ::::::::   */
 /*   pipex.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
+/*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 11:02:01 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/04/01 15:28:53 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/04/03 10:11:46 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/pipex.h"
 
 // Function that get's the current command.
+// Search for a command executable in a list of directory(current_path).
 static char *get_current_cmd(char **current_path, char *current_cmd)
 {
     char *tmp;
     char *cmd;
 
+    // Loop trough each directory path in the current_path array.
     while (*current_path)
     {
-        tmp = ft_split(*current_path, '/');
+        // Add a slash to to the end of current path.
+        tmp = ft_strjoin(*current_path, "/");
+        // Concatenate the current_cmd to tmp.
         cmd = ft_strjoin(tmp, current_cmd);
+        free(tmp);
+        // Check if the constructed command path is accessable. It checks if the
+        // the file exist and the process has permission to execute it. Using the
+        // 0 mode which checks it's existance. 
+        if (access(cmd, 0) == 0)
+            // if it is, return cmd.
             return (cmd);
+        free(cmd);
+        // Move to the next directory path.
         current_path++;
     }
+    // Return NULL if the cmd is found in none of the path.
     return (NULL);
 }
 
-// First command.
-static void first_child(t_data data, char **argv, char **env)
+// Second command
+void second_child(t_data data, char **argv, char **env)
 {
-    // (void)data;
-    // (void)argv;
-    (void)env;
+    dup2(data.fd[0], 0);
+    close(data.fd[1]);
+    dup2(data.outfile, 1);
+    data.cmd_args = ft_split(argv[3], ' ');
+    data.cmd = get_current_cmd(data.get_directory, data.cmd_args[0]);
+    execve(data.cmd, data.cmd_args, env);
+}
+
+// First command.
+void first_child(t_data data, char **argv, char **env)
+{
     // Replace standart output with the with output file
     dup2(data.fd[1], 1);
+    ft_printf("test\n");
     // Close unused file.
-    ft_printf("current arg\n");
     close(data.fd[0]);
     // Replace standart input with the infile file.
     dup2(data.infile, 0);
     data.cmd_args = ft_split(argv[2], ' ');
     // ft_printf("current arg: %s\n", data.cmd_args);
-    data.cmd = get_current_cmd(data.path, data.cmd_args[0]);
-    // ft_printf("%s\n", data.cmd);
+    data.cmd = get_current_cmd(data.get_directory, data.cmd_args[0]);
+    ft_printf("%s\n", data.cmd);
     // Execute the command.
-    // execve()
+    execve(data.cmd, data.cmd_args, env);
 }
 
 // Returns the value of env.
@@ -61,7 +82,7 @@ static char *path(char **env)
     {
         // If "PATH" is found, return the current str of env.
         if (ft_strncmp("PATH", env[i], 4) == 0)
-            return(env[i]);
+            return(env[i] + 5);
         // Move to the next str in the array.
         i++;
     }
@@ -87,30 +108,38 @@ int main(int argc, char **argv, char **env)
     // Open argv[argc - 1] which mean the last fd (in this case, "outfile").
     // Using the open function we want to write and read (O_RDWR) in this file and 
     // create it if it does not exist(O_CREAT). And these are the permission 0000644.
-    data.outfile = open(argv[argc - 1], O_CREAT | O_RDWR, 0000644);
+    data.outfile = open(argv[argc - 1], O_TRUNC | O_CREAT | O_RDWR, 0000644);
     // 4). Create necessary pipe.
-    pipe(data.fd);
+    if (pipe(data.fd) < 0)
+        ft_printf("pipe error\n");
     // 5). Get the path.
     // Use path to get the path.
     data.path = path(env);
-    ft_printf("path: %s\n", data.path);
+    // ft_printf("path: %s\n", data.path);
     // 6).Get the command path.
     // Check each path directory for the current command.
     data.get_directory = ft_split(data.path, ':');
-    ft_printf("get_directory: %s\n", data.get_directory[0]);
     // 7). First child process.(fork)
     // New child process.
     data.pid_cmd1 = fork();
     ft_printf("fork pid_cmd1: %i\n", data.pid_cmd1);
+    if (data.pid_cmd1 != 0)
+        ft_printf("pid error\n");
     if (data.pid_cmd1 == 0)
+    {
         // Execute the first command.
         first_child(data, argv, env);
+    }
     // 8).Second child process.(fork)
+    data.pid_cmd2 = fork();
     // data.pid_cmd2 = fork();
         // Execute second command.
-    
     // 9).
     // Close pipe.
+    close(data.fd[0]);
+    close(data.fd[1]);
     // Wait for first child.
+    waitpid(data.pid_cmd1, NULL, 0);
     // Wait for second child.
+    waitpid(data.pid_cmd2, NULL, 0);
 }
