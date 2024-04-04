@@ -6,7 +6,7 @@
 /*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 11:02:01 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/04/03 10:11:46 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/04/04 15:34:41 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,30 +42,33 @@ static char *get_current_cmd(char **current_path, char *current_cmd)
 }
 
 // Second command
-void second_child(t_data data, char **argv, char **env)
+static void second_child(t_data data, char **argv, char **env)
 {
+    // Redirect standard input to read from the read end of the pipe.
     dup2(data.fd[0], 0);
+    // Close the write end of the pipe because it is not needed.
     close(data.fd[1]);
+    // Redirect standard output to write to the specified output file.
     dup2(data.outfile, 1);
+    // Parse the command argument from argv[2]
     data.cmd_args = ft_split(argv[3], ' ');
     data.cmd = get_current_cmd(data.get_directory, data.cmd_args[0]);
+    // Execute the command.
     execve(data.cmd, data.cmd_args, env);
 }
 
 // First command.
-void first_child(t_data data, char **argv, char **env)
+static void first_child(t_data data, char **argv, char **env)
 {
-    // Replace standart output with the with output file
+    // Replace standart output with the output file
     dup2(data.fd[1], 1);
-    ft_printf("test\n");
     // Close unused file.
     close(data.fd[0]);
     // Replace standart input with the infile file.
     dup2(data.infile, 0);
+    // Parse the command argument from argv[2]
     data.cmd_args = ft_split(argv[2], ' ');
-    // ft_printf("current arg: %s\n", data.cmd_args);
     data.cmd = get_current_cmd(data.get_directory, data.cmd_args[0]);
-    ft_printf("%s\n", data.cmd);
     // Execute the command.
     execve(data.cmd, data.cmd_args, env);
 }
@@ -92,7 +95,6 @@ static char *path(char **env)
 
 int main(int argc, char **argv, char **env) 
 {
-
     t_data data;
     
     // if (argc != 5)
@@ -110,30 +112,23 @@ int main(int argc, char **argv, char **env)
     // create it if it does not exist(O_CREAT). And these are the permission 0000644.
     data.outfile = open(argv[argc - 1], O_TRUNC | O_CREAT | O_RDWR, 0000644);
     // 4). Create necessary pipe.
-    if (pipe(data.fd) < 0)
-        ft_printf("pipe error\n");
+    pipe(data.fd);
     // 5). Get the path.
     // Use path to get the path.
     data.path = path(env);
-    // ft_printf("path: %s\n", data.path);
     // 6).Get the command path.
     // Check each path directory for the current command.
     data.get_directory = ft_split(data.path, ':');
     // 7). First child process.(fork)
     // New child process.
     data.pid_cmd1 = fork();
-    ft_printf("fork pid_cmd1: %i\n", data.pid_cmd1);
-    if (data.pid_cmd1 != 0)
-        ft_printf("pid error\n");
     if (data.pid_cmd1 == 0)
-    {
         // Execute the first command.
         first_child(data, argv, env);
-    }
     // 8).Second child process.(fork)
     data.pid_cmd2 = fork();
-    // data.pid_cmd2 = fork();
         // Execute second command.
+        second_child(data, argv, env);
     // 9).
     // Close pipe.
     close(data.fd[0]);
@@ -142,4 +137,5 @@ int main(int argc, char **argv, char **env)
     waitpid(data.pid_cmd1, NULL, 0);
     // Wait for second child.
     waitpid(data.pid_cmd2, NULL, 0);
+    return (0);
 }
