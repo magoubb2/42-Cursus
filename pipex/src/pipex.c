@@ -6,7 +6,7 @@
 /*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 11:02:01 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/04/05 09:17:44 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/04/05 10:07:34 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,12 @@ static void second_child(t_data data, char **argv, char **env)
     // Parse the command argument from argv[2]
     data.cmd_args = ft_split(argv[3], ' ');
     data.cmd = get_current_cmd(data.get_directory, data.cmd_args[0]);
+    if (!data.cmd)
+    {
+       free_child(&data);
+       error_msg(CMD_ERR);
+       exit(1);
+    }
     // Execute the command.
     execve(data.cmd, data.cmd_args, env);
 }
@@ -69,6 +75,12 @@ static void first_child(t_data data, char **argv, char **env)
     // Parse the command argument from argv[2]
     data.cmd_args = ft_split(argv[2], ' ');
     data.cmd = get_current_cmd(data.get_directory, data.cmd_args[0]);
+    if (!data.cmd)
+    {
+       free_child(&data);
+       error_msg(CMD_ERR);
+       exit(1);
+    }
     // Execute the command.
     execve(data.cmd, data.cmd_args, env);
 }
@@ -115,7 +127,8 @@ int main(int argc, char **argv, char **env)
     if (data.outfile < 0)
         error_msg(OUTFILE_ERR);
     // 4). Create necessary pipe.
-    pipe(data.fd);
+    if (pipe(data.fd) < 0)
+        error_msg(PIPE_ERR);
     // 5). Get the path.
     // Use path to get the path.
     data.path = path(env);
@@ -140,5 +153,7 @@ int main(int argc, char **argv, char **env)
     waitpid(data.pid_cmd1, NULL, 0);
     // Wait for second child.
     waitpid(data.pid_cmd2, NULL, 0);
+    // Need to free parents process.
+    free_parents(&data);
     return (0);
 }

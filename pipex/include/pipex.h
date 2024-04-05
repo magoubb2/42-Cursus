@@ -6,7 +6,7 @@
 /*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 11:02:06 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/04/05 09:16:55 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/04/05 10:06:57 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@
 #define ARG_NUM_BAD "The number of argument is not 5. Try again!"
 #define INFILE_ERR  "infile"
 #define OUTFILE_ERR  "outfile"
+#define PIPE_ERR  "pipe"
+#define CMD_ERR "command"
 
 typedef struct s_data
 {
@@ -39,5 +41,9 @@ typedef struct s_data
 // void second_child(t_data data, char **argv, char **env);
 void    error_msg(char *msg);
 int     print_msg(char *msg);
+void    free_parents(t_data *data);
+void    free_child(t_data *data);
+
+
 
 #endif
