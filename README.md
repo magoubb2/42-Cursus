@@ -9,7 +9,7 @@
 | ```Get_Next_Line``` |           ```101%```           |    :white_check_mark:   |
 |   ```ft_printf```   |           ```100%```           |    :white_check_mark:   |
 |  ```Born2beroot```  | ```waiting for evaluation...```|:arrows_counterclockwise:|
-|     ```Pipex```     | ```waiting for evaluation...```|:arrows_counterclockwise:|
+|     ```Pipex```     |    ```Work in progress...```   |:arrows_counterclockwise:|
 ## Libft :book:
 Description:
 
