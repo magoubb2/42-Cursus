@@ -6,7 +6,7 @@
 /*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 11:02:06 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/04/04 15:21:25 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/04/05 09:16:55 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,10 @@
 #include <sys/wait.h>
 #include <fcntl.h>
 #include "../libft/libft.h"
+
+#define ARG_NUM_BAD "The number of argument is not 5. Try again!"
+#define INFILE_ERR  "infile"
+#define OUTFILE_ERR  "outfile"
 
 typedef struct s_data
 {
@@ -33,5 +37,7 @@ typedef struct s_data
 
 // void first_child(t_data data, char **argv, char **env);
 // void second_child(t_data data, char **argv, char **env);
+void    error_msg(char *msg);
+int     print_msg(char *msg);
 
 #endif

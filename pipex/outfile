@@ -1,8 +1,8 @@
-Makefile$
-img$
-include$
-infile$
-libft$
-outfile$
-pipex$
-src$
+Makefile
+img
+include
+infile
+libft
+outfile
+pipex
+src

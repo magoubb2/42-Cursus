@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+         #
+#    By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/22 10:43:29 by margueriteb       #+#    #+#              #
-#    Updated: 2024/04/01 13:55:57 by marbaron         ###   ########.fr        #
+#    Updated: 2024/04/05 08:57:37 by margueriteb      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = pipex
 
-SRC = ./src/pipex.c
+SRC = ./src/pipex.c ./src/error_msg.c
 
 OBJ = $(SRC:.c=.o)
 

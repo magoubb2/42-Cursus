@@ -6,7 +6,7 @@
 /*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 11:02:01 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/04/04 15:34:41 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/04/05 09:17:44 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,20 +97,23 @@ int main(int argc, char **argv, char **env)
 {
     t_data data;
     
-    // if (argc != 5)
+    // 1).Check nb of arguments.
+    if (argc != 5)
         // return error
-
-    // 1). Check for errors.
-    
+        return(print_msg(ARG_NUM_BAD));
     // 2). Initialise infile.
     // Open argv[1] which is the first fd (in this case "infile"). Open it in read
     // only mode.
     data.infile = open(argv[1], O_RDONLY);
+    if (data.infile < 0)
+        error_msg(INFILE_ERR);
     // 3). Initialise outfile.
     // Open argv[argc - 1] which mean the last fd (in this case, "outfile").
     // Using the open function we want to write and read (O_RDWR) in this file and 
     // create it if it does not exist(O_CREAT). And these are the permission 0000644.
     data.outfile = open(argv[argc - 1], O_TRUNC | O_CREAT | O_RDWR, 0000644);
+    if (data.outfile < 0)
+        error_msg(OUTFILE_ERR);
     // 4). Create necessary pipe.
     pipe(data.fd);
     // 5). Get the path.
