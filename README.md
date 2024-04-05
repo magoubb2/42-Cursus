@@ -7,9 +7,9 @@
 |:-------------------:|:------------------------------:|:-----------------------:|
 |     ```Libft```     |           ```100%```           |    :white_check_mark:   |
 | ```Get_Next_Line``` |           ```101%```           |    :white_check_mark:   |
-|   ```ft_printf```   | ```Waiting for evaluation...```|:arrows_counterclockwise:|
+|   ```ft_printf```   |           ```100%```           |    :white_check_mark:   |
 |  ```Born2beroot```  | ```waiting for evaluation...```|:arrows_counterclockwise:|
-|     ```Pipex```     |     ```Work in progress```     |       :hourglass:       |
+|     ```Pipex```     | ```waiting for evaluation...```|:arrows_counterclockwise:|
 ## Libft :book:
 Description:
 
