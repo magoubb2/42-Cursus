@@ -6,11 +6,14 @@
 /*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 11:02:01 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/04/05 14:18:49 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/04/12 12:48:20 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/pipex.h"
+
+/* COULD HANDLE ABSOLUTE PATH */
+/* THE SUBJECT DOESN'T AKS TO HANDLE SINGLE QUOTES */
 
 // Function that get's the current command.
 // Search for a command executable in a list of directory(current_path).
@@ -118,14 +121,14 @@ int main(int argc, char **argv, char **env)
     // Open argv[1] which is the first fd (in this case "infile"). Open it in read
     // only mode.
     data.infile = open(argv[1], O_RDONLY);
-    if (data.infile < 0)
+    if (data.infile <= 0)
         error_msg(INFILE_ERR);
     // 3). Initialise outfile.
     // Open argv[argc - 1] which mean the last fd (in this case, "outfile").
     // Using the open function we want to write and read (O_RDWR) in this file and 
     // create it if it does not exist(O_CREAT). And these are the permission 0000644.
     data.outfile = open(argv[argc - 1], O_TRUNC | O_CREAT | O_RDWR , 0000644);
-    if (data.outfile < 0)
+    if (data.outfile <= 0)
         error_msg(OUTFILE_ERR);
     // 4). Create necessary pipe.
     if (pipe(data.fd) < 0)
@@ -157,5 +160,6 @@ int main(int argc, char **argv, char **env)
     waitpid(data.pid_cmd2, NULL, 0);
     // Need to free parents process.
     free_parents(&data);
+    // Exit success.
     return (0);
 }

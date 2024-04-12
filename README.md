@@ -8,7 +8,7 @@
 |     ```Libft```     |           ```100%```           |    :white_check_mark:   |
 | ```Get_Next_Line``` |           ```101%```           |    :white_check_mark:   |
 |   ```ft_printf```   |           ```100%```           |    :white_check_mark:   |
-|  ```Born2beroot```  | ```waiting for evaluation...```|:arrows_counterclockwise:|
+|  ```Born2beroot```  |            ```86%```           |    :white_check_mark:   |
 |     ```Pipex```     |    ```Work in progress...```   |:arrows_counterclockwise:|
 ## Libft :book:
 Description:
@@ -78,6 +78,8 @@ The goal of this project is pretty straightforward. You will recode printf().
 > This implementation will need to execute the same as the real one for the specified place holders.
 
 -----------------------------------------------------------------
+## Born2beroot :computer:
 
-> Born2beroot done but need to be evaluated.
+This project aims to introduce you to the wonderful world of virtualization.
+
 > Working on Pipex.6

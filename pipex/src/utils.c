@@ -6,21 +6,23 @@
 /*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 08:56:48 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/04/05 10:03:40 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/04/06 10:48:40 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/pipex.h"
+#include <stdlib.h>
 
 int    print_msg(char *msg)
 {
     ft_printf("%s\n", msg);
-    return (1);
+    return(1);
 }
 
 void    error_msg(char *msg)
 {
     perror(msg);
+    // Exit failure.
     exit(1);
 }
 
