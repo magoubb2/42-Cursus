@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pipex.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
+/*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 11:02:06 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/04/06 10:36:33 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/04/15 12:12:53 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,12 @@
 #define PIPEX_H
 
 #include <unistd.h>
+#include <stdio.h>
 #include <sys/wait.h>
 #include <fcntl.h>
 #include "../libft/libft.h"
 
+// #define RED "\033[0;31m"
 #define ARG_NUM_BAD "The number of argument is not 5. Try again!"
 #define INFILE_ERR  "infile"
 #define OUTFILE_ERR  "outfile"

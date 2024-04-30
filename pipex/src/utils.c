@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
+/*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 08:56:48 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/04/06 10:48:40 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/04/15 12:13:04 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int    print_msg(char *msg)
 
 void    error_msg(char *msg)
 {
+    // ft_printf(RED);
     perror(msg);
     // Exit failure.
     exit(1);
