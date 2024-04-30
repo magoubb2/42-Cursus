@@ -6,11 +6,11 @@
 /*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 11:42:23 by marbaron          #+#    #+#             */
-/*   Updated: 2024/04/30 10:15:49 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/04/30 12:54:00 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../include/so_long.h"
 
 void line_len_validity(char *map)
 {

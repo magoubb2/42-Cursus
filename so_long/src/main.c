@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
+/*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 11:33:56 by marbaron          #+#    #+#             */
-/*   Updated: 2024/04/29 12:12:34 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/04/30 14:41:53 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../include/so_long.h"
 
 int main(int argc, char **argv)
 {
@@ -24,5 +24,9 @@ int main(int argc, char **argv)
 			// a). If any of the line after the first line are not the same
 			//	   Length as the first one return an error msg.
 		// 4). Check if the wall's are only made of '1'.
-		// 5). Check for a valid path in the map.
+	// 3). Check for valid path in the map
+		// 1). Count the number of collectables in the the map.
+		// 2). Find the starting position of the player. 
+		// 3). Then do floodfill on a backup map so it doesn't change the 
+		// 	   map.
 }

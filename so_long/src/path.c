@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   path.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/29 11:30:25 by marbaron          #+#    #+#             */
-/*   Updated: 2024/04/30 14:52:01 by margueriteb      ###   ########.fr       */
+/*   Created: 2024/04/30 14:42:10 by margueriteb       #+#    #+#             */
+/*   Updated: 2024/04/30 14:54:57 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#include "../include/so_long.h"
 
-# include "../mlx/mlx.h"
-
-typedef struct s_data
+int count_collectibles(char **map)
 {
-    char *map;
-}   t_data;
+    // Count the nb of collectibles in the map.
+}
 
-#endif
+int player_pos(t_data *data, int row, int colum)
+{
+    // Get the player's starting position.
+}
+
+void floodfill(x, y, t_data *data, int c)
+{
+    // Function that will check if there is a possible way of exiting the game
+    // and collecting all of the collectibles.
+}
