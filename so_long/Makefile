@@ -3,21 +3,21 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+         #
+#    By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/29 11:23:03 by marbaron          #+#    #+#              #
-#    Updated: 2024/04/29 11:29:34 by marbaron         ###   ########.fr        #
+#    Updated: 2024/05/03 12:46:04 by margueriteb      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
 
-SRC = 
+SRC = src/main.c src/map.c
 
 OBJ = $(SRC:.c=.o)
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -Imlx
+CFLAGS = -Wall -Wextra -Werror -Imlx -g
 RM = rm -f
 
 LIBFT = libft.a
@@ -40,8 +40,10 @@ $(NAME): $(OBJ)
 leaks: $(NAME)
 	leaks --atExit -- ./$(NAME)
 clean:
+	@$(MAKE) -C $(LIBFTD)
 	@$(RM) $(OBJ) $(NAME)
 fclean: clean
 	@$(RM) $(NAME)
 	$(MAKE) -C $(LIBFTD) fclean
+	@make -s clean -C $(MLXPATH)
 re: fclean all
