@@ -3,16 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   map.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
+/*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 11:42:23 by marbaron          #+#    #+#             */
-/*   Updated: 2024/05/03 15:28:42 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/05/05 12:02:22 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
 
 // Parsing.
+// Check the map's conditon.
+	// 1). Check if it only contains -> '1', '0', 'P', 'E', 'C' and "\n".
+	// 2). Check if it contains the right amount of each thing's.
+	// 3). Check the length of each horizontal line.
+		// a). If any of the line after the first line are not the same
+		//	   Length as the first one return an error msg.
 
 static void line_len_validity(char *map)
 {

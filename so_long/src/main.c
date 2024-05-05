@@ -3,14 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
+/*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 11:33:56 by marbaron          #+#    #+#             */
-/*   Updated: 2024/05/03 14:44:54 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/05/05 12:06:41 by marbaron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
+
+static char **convert_simple_array(char *map)
+{
+	return (ft_split(map, '\n'));
+}
 
 static char *read_and_stash_map(char *map)
 {
@@ -41,15 +46,11 @@ int main(int argc, char **argv)
 	// 1). Function that reads and stash the map.
 	// The original map is not read an stash as a 2d array.
 	data.orignial_map = read_and_stash_map(argv[1]);
-	map_validity(data.orignial_map, &data);
 	// This is basically all of the parsing.
 	// 2). function that checks if we have a valid map.
-		// Check the map's conditon.
-		// 1). Check if it only contains -> '1', '0', 'P', 'E', 'C' and "\n".
-		// 2). Check if it contains the right amount of each thing's.
-		// 3). Check the length of each horizontal line.
-			// a). If any of the line after the first line are not the same
-			//	   Length as the first one return an error msg.
+	map_validity(data.orignial_map, &data);
+	// Transform the simple array into a double array.
+	data.map = convert_simple_array(data.orignial_map);
 		// 4). Check if the wall's are only made of '1'.
 	// 3). Check for valid path in the map
 		// 1). Count the number of collectables in the the map.
