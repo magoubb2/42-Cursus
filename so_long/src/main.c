@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marbaron <marbaron@student.42.fr>          +#+  +:+       +#+        */
+/*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 11:33:56 by marbaron          #+#    #+#             */
-/*   Updated: 2024/05/05 12:06:41 by marbaron         ###   ########.fr       */
+/*   Updated: 2024/05/06 12:20:57 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,8 @@ int main(int argc, char **argv)
 	map_validity(data.orignial_map, &data);
 	// Transform the simple array into a double array.
 	data.map = convert_simple_array(data.orignial_map);
-		// 4). Check if the wall's are only made of '1'.
+	// 4). Check if the wall's are only made of '1'.
+	side_wall_validity(&data);
 	// 3). Check for valid path in the map
 		// 1). Count the number of collectables in the the map.
 		// 2). Find the starting position of the player. 

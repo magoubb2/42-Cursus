@@ -6,13 +6,13 @@
 #    By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/29 11:23:03 by marbaron          #+#    #+#              #
-#    Updated: 2024/05/03 12:46:04 by margueriteb      ###   ########.fr        #
+#    Updated: 2024/05/06 12:21:52 by margueriteb      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
 
-SRC = src/main.c src/map.c
+SRC = src/main.c src/map.c src/map2.c
 
 OBJ = $(SRC:.c=.o)
 
