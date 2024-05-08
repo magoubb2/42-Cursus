@@ -6,7 +6,7 @@
 /*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 11:30:25 by marbaron          #+#    #+#             */
-/*   Updated: 2024/05/06 12:21:15 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/05/06 13:56:13 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,9 @@ typedef struct s_data
     char    *orignial_map;
     int     row_number;
     int     colum_number;
+    int     collectibles_number;
+    int     player_pos_x;
+    int     player_pos_y;
 }   t_data;
 
 void    map_validity(char *map, t_data *data);
