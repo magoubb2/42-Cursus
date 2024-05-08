@@ -6,7 +6,7 @@
 /*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 14:42:10 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/05/06 14:50:51 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/05/08 16:06:49 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,9 @@ void floodfill(int x, int y, t_data *data, int c)
     floodfill(x + 1, y, data, c); // Down
     floodfill(x, y - 1, data, c); // Left
     floodfill(x, y + 1, data, c); // Rigth
+}
+
+void path_validity(t_data *data)
+{
+    
 }
