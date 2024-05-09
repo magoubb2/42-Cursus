@@ -6,7 +6,7 @@
 /*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 11:33:56 by marbaron          #+#    #+#             */
-/*   Updated: 2024/05/06 13:51:08 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/05/08 21:23:15 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ int main(int argc, char **argv)
 	// 3). Check for valid path in the map
 		// 1). Count the number of collectables in the the map.
 		// 2). Find the starting position of the player. 
-		// 3). Then do floodfill on a backup map so it doesn't change the 
+		// 3). Then do floodfill on a backup map so it doesn't change the
+	path_validity(&data);
 		// 	   map.
 }
