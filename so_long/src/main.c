@@ -6,7 +6,7 @@
 /*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 11:33:56 by marbaron          #+#    #+#             */
-/*   Updated: 2024/05/08 21:23:15 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/05/10 13:18:10 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,12 @@ int main(int argc, char **argv)
 	// 4). Check if the wall's are only made of '1'.
 	side_wall_validity(&data);
 	// 3). Check for valid path in the map
-		// 1). Count the number of collectables in the the map.
-		// 2). Find the starting position of the player. 
-		// 3). Then do floodfill on a backup map so it doesn't change the
 	path_validity(&data);
-		// 	   map.
+	// 4) Initialise mlx.
+	data.mlx = mlx_init();
+	// 5) Initialise the game window.
+	printf("%i\n", data.row_number);
+	printf("%i\n", data.colum_number);
+	data.mlx_window = mlx_new_window(data.mlx, data.colum_number * 100, data.row_number * 100, "so_long");
+	// 6) Initialise the game hook.
 }

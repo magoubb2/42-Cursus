@@ -6,7 +6,7 @@
 /*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 11:30:25 by marbaron          #+#    #+#             */
-/*   Updated: 2024/05/08 21:41:26 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/05/10 12:09:09 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ typedef struct s_data
     int     player_pos_x;
     int     player_pos_y;
     int     exit_flag;
+    void    *mlx;
+    void    *mlx_window;
 }   t_data;
 
 void    map_validity(char *map, t_data *data);

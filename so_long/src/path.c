@@ -6,11 +6,15 @@
 /*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 14:42:10 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/05/08 21:51:59 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/05/08 21:59:47 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
+
+// 1). Count the number of collectables in the the map.
+// 2). Find the starting position of the player. 
+// 3). Then do floodfill on a backup map so it doesn't change the map.
 
 // Get the player's starting position.
 static void player_pos(t_data *data, int x, int y)
