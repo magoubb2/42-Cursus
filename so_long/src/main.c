@@ -6,7 +6,7 @@
 /*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 11:33:56 by marbaron          #+#    #+#             */
-/*   Updated: 2024/05/10 13:18:10 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/05/15 15:40:10 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,11 +57,17 @@ int main(int argc, char **argv)
 	side_wall_validity(&data);
 	// 3). Check for valid path in the map
 	path_validity(&data);
-	// 4) Initialise mlx.
+	// 4). Initialise mlx.
 	data.mlx = mlx_init();
-	// 5) Initialise the game window.
+	// 5). Initialise the game window.
 	printf("%i\n", data.row_number);
 	printf("%i\n", data.colum_number);
 	data.mlx_window = mlx_new_window(data.mlx, data.colum_number * 100, data.row_number * 100, "so_long");
+	// 6). transform xpm to image. 
+	xpm_to_image(&data);
+	// 7). Add images to the window.
+	put_img_to_window(&data);
 	// 6) Initialise the game hook.
+	// 7) mlx loop.
+	mlx_loop(data.mlx);
 }

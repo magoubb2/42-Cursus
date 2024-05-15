@@ -6,7 +6,7 @@
 /*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 11:30:25 by marbaron          #+#    #+#             */
-/*   Updated: 2024/05/10 12:09:09 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/05/15 15:58:24 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,18 @@ typedef struct s_data
     int     exit_flag;
     void    *mlx;
     void    *mlx_window;
+    void    *img_floor;
+    void    *img_player;
+    void    *img_collectible;
+    void    *img_wall;
+    void    *img_exit;
 }   t_data;
 
 void    map_validity(char *map, t_data *data);
 int     get_row_number(char **map);
 void    side_wall_validity(t_data *data);
 void    path_validity(t_data *data);
+void    put_img_to_window(t_data *data);
+void    xpm_to_image(t_data *data);
 
 #endif
