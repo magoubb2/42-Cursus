@@ -6,7 +6,7 @@
 /*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 11:33:56 by marbaron          #+#    #+#             */
-/*   Updated: 2024/05/15 15:40:10 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/05/16 12:21:54 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ int main(int argc, char **argv)
 {
 	t_data data;
 	(void) argc;
-	
 	// 1). Function that reads and stash the map.
 	// The original map is not read an stash as a 2d array.
 	data.orignial_map = read_and_stash_map(argv[1]);
@@ -62,7 +61,7 @@ int main(int argc, char **argv)
 	// 5). Initialise the game window.
 	printf("%i\n", data.row_number);
 	printf("%i\n", data.colum_number);
-	data.mlx_window = mlx_new_window(data.mlx, data.colum_number * 100, data.row_number * 100, "so_long");
+	data.mlx_window = mlx_new_window(data.mlx, data.colum_number * 32, data.row_number * 32, "so_long");
 	// 6). transform xpm to image. 
 	xpm_to_image(&data);
 	// 7). Add images to the window.
