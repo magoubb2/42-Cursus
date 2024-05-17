@@ -6,7 +6,7 @@
 /*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 13:35:31 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/05/16 12:18:33 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/05/17 13:18:42 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,24 +34,16 @@ void    xpm_to_image(t_data *data)
 static void    add_img_to_window(t_data *data, char tile, int x, int y)
 {
     if (tile == '1')
-    {
-        if (!data->img_wall)
-            printf("problem\n");
         mlx_put_image_to_window(data->mlx, data->mlx_window, data->img_wall, x, y);
-    }
     if (tile == '0')
-    {
         mlx_put_image_to_window(data->mlx, data->mlx_window, data->img_floor, x, y);
-    }
     if (tile == 'P')
     {
         mlx_put_image_to_window(data->mlx, data->mlx_window, data->img_floor, x, y);
         mlx_put_image_to_window(data->mlx, data->mlx_window, data->img_player, x, y);
     }
     if (tile == 'E')
-    {
         mlx_put_image_to_window(data->mlx, data->mlx_window, data->img_exit, x, y);
-    }
     if (tile == 'C')
     {
         mlx_put_image_to_window(data->mlx, data->mlx_window, data->img_floor, x, y);
@@ -63,14 +55,13 @@ void    put_img_to_window(t_data *data)
 {
     int x;
     int y;
-
     y = -1;
     while(++y < data->row_number)
     {
         x = -1;
         while(++x < data->colum_number)
         {
-            add_img_to_window(data, data->map[x][y], x * 32, y * 32);
+            add_img_to_window(data, data->map[y][x], x * 32, y * 32);
             
         }
     }

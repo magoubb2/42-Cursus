@@ -6,7 +6,7 @@
 /*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 11:33:56 by marbaron          #+#    #+#             */
-/*   Updated: 2024/05/16 12:21:54 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/05/17 13:16:03 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,6 @@ int main(int argc, char **argv)
 	// 4). Initialise mlx.
 	data.mlx = mlx_init();
 	// 5). Initialise the game window.
-	printf("%i\n", data.row_number);
-	printf("%i\n", data.colum_number);
 	data.mlx_window = mlx_new_window(data.mlx, data.colum_number * 32, data.row_number * 32, "so_long");
 	// 6). transform xpm to image. 
 	xpm_to_image(&data);

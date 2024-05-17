@@ -6,7 +6,7 @@
 /*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 14:42:10 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/05/16 12:22:52 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/05/17 13:24:56 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,7 @@ static void player_pos(t_data *data, int x, int y)
 static void floodfill(int x, int y, t_data *data, int *collectible)
 {
     // Check if the current position is a '1; or a 'V' if it is skip it.
-	printf("problem\n");
-    if (data->floodfill_map[x][y] == '1' || data->floodfill_map[x][y] == 'V')
+    if (data->floodfill_map[x][y] == '1' || data->floodfill_map[x][y] == 'V' || y < 0 || x < 0)
         return ;
     // Check if the current position is a 'C' if it is decrement the number of
     // collectibles.
