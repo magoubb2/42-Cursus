@@ -6,7 +6,7 @@
 /*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 11:42:23 by marbaron          #+#    #+#             */
-/*   Updated: 2024/05/20 11:10:41 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/05/20 11:38:42 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,12 +111,6 @@ static void character_validity(char *map)
             
     }
 }
-
-// void side_wall_validity(t_data *data)
-// {
-//     // Check each of the side wall of the map and if they are not
-//     // 1 return an error msg.
-// }
 
 void map_validity(char *map, t_data *data)
 {
