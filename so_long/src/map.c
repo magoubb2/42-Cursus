@@ -6,7 +6,7 @@
 /*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 11:42:23 by marbaron          #+#    #+#             */
-/*   Updated: 2024/05/06 13:47:57 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/05/20 11:10:41 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,7 @@ static void nb_character_validity(char *map, t_data *data)
     if (p_nb != 1 || e_nb != 1 || c_nb < 1)
         printf("error\n");
     data->collectibles_number = c_nb;
+    data->exit_flag = 0;
 }
 
 static void character_validity(char *map)
