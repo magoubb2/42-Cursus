@@ -6,7 +6,7 @@
 /*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 12:22:48 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/05/10 12:08:10 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/05/21 14:41:25 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,3 +62,15 @@ void side_wall_validity(t_data *data)
     }
     
 }
+
+// static void player_moves(int next_ppx, int next_ppy, t_data *data)
+// {
+    // 1). Check if the next position the player is trying to move to is not a wall.
+    // 2). Check if all the collectibles have been collected and if they have and the
+    //     next player's position is is the exit, handle the condition that win the game.
+    // 3). If player has not collected all of the collectible but the next position is
+    //     is the exit the flag is set to one.
+    // 4). if collectible is encountered, decrement the collectible count. And update map
+    //     by replacing collectible with floor.
+    // 5). Restore the exit.
+// }
