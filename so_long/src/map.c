@@ -6,7 +6,7 @@
 /*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 11:42:23 by marbaron          #+#    #+#             */
-/*   Updated: 2024/05/20 11:38:42 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/05/22 15:32:13 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 	// 1). Check if it only contains -> '1', '0', 'P', 'E', 'C' and "\n".
 	// 2). Check if it contains the right amount of each thing's.
 	// 3). Check the length of each horizontal line.
-		// a). If any of the line after the first line are not the same
+	    // a). If any of the line after the first line are not the same
 		//	   Length as the first one return an error msg.
 
 static void line_len_validity(char *map)
@@ -86,13 +86,11 @@ static void nb_character_validity(char *map, t_data *data)
             c_nb++;
         i++;
     }
-    printf("%i\n", p_nb);
-    printf("%i\n", e_nb);
-    printf("%i\n", c_nb);
     if (p_nb != 1 || e_nb != 1 || c_nb < 1)
         printf("error\n");
     data->collectibles_number = c_nb;
     data->exit_flag = 0;
+    data->exit_win_flag = 0;
 }
 
 static void character_validity(char *map)

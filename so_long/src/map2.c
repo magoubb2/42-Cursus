@@ -6,7 +6,7 @@
 /*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 12:22:48 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/05/21 14:41:25 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/05/22 15:18:01 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,14 +63,68 @@ void side_wall_validity(t_data *data)
     
 }
 
-// static void player_moves(int next_ppx, int next_ppy, t_data *data)
-// {
+static void player_moves(int next_ppx, int next_ppy, t_data *data)
+{
     // 1). Check if the next position the player is trying to move to is not a wall.
-    // 2). Check if all the collectibles have been collected and if they have and the
-    //     next player's position is is the exit, handle the condition that win the game.
-    // 3). If player has not collected all of the collectible but the next position is
-    //     is the exit the flag is set to one.
-    // 4). if collectible is encountered, decrement the collectible count. And update map
-    //     by replacing collectible with floor.
-    // 5). Restore the exit.
-// }
+    if (data->map[data->player_pos_x + next_ppx][data->player_pos_y + next_ppy] != '1')
+    {
+        // 2). Check if all the collectibles have been collected and if they have and the
+        //     next player's position is is the exit, handle the condition that win the game.
+        if (data->collectibles_number == 0 && data->map[data->player_pos_x + next_ppx][data->player_pos_y + next_ppy] == 'E' \
+            && data->map[data->player_pos_x][data->player_pos_y] == 'P')
+            {
+                ft_printf("You've won!\n");
+                exit(0);            
+            }
+        // 3). If player has not collected all of the collectible but the next position is
+        //     is the exit the flag is set to one.
+        if (data->map[data->player_pos_x + next_ppx][data->player_pos_y + next_ppy] == 'E' && data->collectibles_number != 0)
+            data->exit_win_flag = 1;
+        // 4). if collectible is encountered, decrement the collectible count. And update map
+        //     by replacing collectible with floor.
+        if (data->map[data->player_pos_x + next_ppx][data->player_pos_y + next_ppy] == 'C')
+        {
+            data->collectibles_number--;
+        }
+        data->map[data->player_pos_x][data->player_pos_y] = '0';
+        // 5). Check that the player has steped on the exit before but could not leave and
+        //     check that the current next move is not into an exit cell.
+        if ((data->exit_win_flag == 1) && (data->map[data->player_pos_x + next_ppx][data->player_pos_y + next_ppy] != 'E'))
+        {
+            // If the condition are true leave the current position as an exit cell.
+            data->map[data->player_pos_x][data->player_pos_y] = 'E';
+            // And reset the flag indicating that we are no longer on the exit cell.
+            data->exit_win_flag = 0;
+        }
+        // 1). Set the player position.
+        data->map[data->player_pos_x + next_ppx][data->player_pos_y + next_ppy] = 'P';
+        // 2). update the player's current position.
+        data->player_pos_x = data->player_pos_x + next_ppx;
+        data->player_pos_y = data->player_pos_y + next_ppy;
+    }
+}
+
+int key_movement(int keytouch, t_data *data)
+{
+    if (keytouch == 13)
+    {
+        player_moves(-1, 0, data);
+        put_img_to_window(data);
+    }
+    else if (keytouch == 2)
+    {
+        player_moves(0, 1, data);
+        put_img_to_window(data);
+    }
+    else if (keytouch == 1)
+    {
+        player_moves(1, 0, data);
+        put_img_to_window(data);
+    }
+    else if (keytouch == 0)
+    {
+        player_moves(0, -1, data);
+        put_img_to_window(data);
+    }
+    return (0);
+}

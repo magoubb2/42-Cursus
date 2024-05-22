@@ -6,7 +6,7 @@
 /*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 11:33:56 by marbaron          #+#    #+#             */
-/*   Updated: 2024/05/17 13:16:03 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/05/22 14:19:34 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ int main(int argc, char **argv)
 	// 7). Add images to the window.
 	put_img_to_window(&data);
 	// 6) Initialise the game hook.
+	mlx_hook(data.mlx_window, 2, 0, key_movement, &data);
 	// 7) mlx loop.
 	mlx_loop(data.mlx);
 }

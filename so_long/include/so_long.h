@@ -6,7 +6,7 @@
 /*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 11:30:25 by marbaron          #+#    #+#             */
-/*   Updated: 2024/05/15 15:58:24 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/05/22 12:08:35 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ typedef struct s_data
     int     player_pos_x;
     int     player_pos_y;
     int     exit_flag;
+    int     exit_win_flag;
     void    *mlx;
     void    *mlx_window;
     void    *img_floor;
@@ -47,5 +48,6 @@ void    side_wall_validity(t_data *data);
 void    path_validity(t_data *data);
 void    put_img_to_window(t_data *data);
 void    xpm_to_image(t_data *data);
+int     key_movement(int keytouch, t_data *data);
 
 #endif

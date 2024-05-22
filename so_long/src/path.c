@@ -6,7 +6,7 @@
 /*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 14:42:10 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/05/20 11:10:15 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/05/22 15:26:55 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ static void player_pos(t_data *data, int x, int y)
                 data->player_pos_x = x;
                 // Store the position inside of the player_pos_y
                 data->player_pos_y = y;
+                printf("x: %i\n", x);
+                printf("y: %i\n", y);
                 return ;
             }
             // Move to the next colum.
@@ -48,8 +50,9 @@ static void player_pos(t_data *data, int x, int y)
 static void floodfill(int x, int y, t_data *data, int *collectible)
 {
     // Check if the current position is a '1; or a 'V' if it is skip it.
-    if (data->floodfill_map[x][y] == '1' || data->floodfill_map[x][y] == 'V' || x < 0 || y < 0)
+    if (data->floodfill_map[x][y] == '1' || data->floodfill_map[x][y] == 'V' || y < 0 || x < 0)
         return ;
+	printf("problem\n");
     // Check if the current position is a 'C' if it is decrement the number of
     // collectibles.
     if (data->floodfill_map[x][y] == 'C')
@@ -60,7 +63,6 @@ static void floodfill(int x, int y, t_data *data, int *collectible)
         data->exit_flag = 1;
     // Them change the current position character for a 'V' for validated.
     data->floodfill_map[x][y] = 'V';
-    printf("exit_flag: %i\n", data->exit_flag);
     floodfill(x - 1, y, data, collectible); // Up
     floodfill(x + 1, y, data, collectible); // Down
     floodfill(x, y - 1, data, collectible); // Left
@@ -84,7 +86,9 @@ void path_validity(t_data *data)
     floodfill(data->player_pos_x, data->player_pos_y, data, &collectible);
     if (collectible != 0 || data->exit_flag != 1)
     {
-        printf("error");
+        printf("%i\n", collectible);
+        printf("%i\n", data->collectibles_number);
+        printf("error here");
         exit(0);
     }
 }
