@@ -6,7 +6,7 @@
 /*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 12:22:48 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/05/22 15:18:01 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/05/23 11:38:34 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,11 +51,11 @@ void side_wall_validity(t_data *data)
             // check if the first row only contains '1'.
             // Then check if the last row only contains '1'.
             if (data->map[0][x] != '1' || data->map[data->row_number - 1][x] != '1')
-                printf("error\n");
+                printf("error_2\n");
             // Check if the first colum only contains '1'.
             // Then check if the last colum only contains '1'.
             if (data->map[y][0] != '1' || data->map[y][data->colum_number - 1] != '1')
-                printf("error\n");
+                printf("error_3\n");
             x++;
         }
         y++;
@@ -106,6 +106,7 @@ static void player_moves(int next_ppx, int next_ppy, t_data *data)
 
 int key_movement(int keytouch, t_data *data)
 {
+    // Missing escape key.
     if (keytouch == 13)
     {
         player_moves(-1, 0, data);
