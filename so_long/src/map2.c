@@ -6,7 +6,7 @@
 /*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 12:22:48 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/05/23 11:38:34 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/05/24 14:29:08 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,10 +72,7 @@ static void player_moves(int next_ppx, int next_ppy, t_data *data)
         //     next player's position is is the exit, handle the condition that win the game.
         if (data->collectibles_number == 0 && data->map[data->player_pos_x + next_ppx][data->player_pos_y + next_ppy] == 'E' \
             && data->map[data->player_pos_x][data->player_pos_y] == 'P')
-            {
-                ft_printf("You've won!\n");
-                exit(0);            
-            }
+            win(data);
         // 3). If player has not collected all of the collectible but the next position is
         //     is the exit the flag is set to one.
         if (data->map[data->player_pos_x + next_ppx][data->player_pos_y + next_ppy] == 'E' && data->collectibles_number != 0)
