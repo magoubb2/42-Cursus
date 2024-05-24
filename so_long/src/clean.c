@@ -6,7 +6,7 @@
 /*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 14:10:49 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/05/24 14:33:13 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/05/24 14:52:08 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static void    free_map(char **map)
         return ;
     while (map[i])
     {
-        free(map);
+        free(map[i]);
         map[i] = NULL;
         i++;
     }
