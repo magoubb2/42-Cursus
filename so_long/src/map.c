@@ -6,7 +6,7 @@
 /*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 11:42:23 by marbaron          #+#    #+#             */
-/*   Updated: 2024/05/23 11:31:56 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/05/28 12:03:42 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,8 @@ static void line_len_validity(char *map)
             if (following_line_len != first_line_len)
             {
                 // return error msg
-                printf("error_4\n");
+                ft_printf("error_4\n");
+                exit(0);
             }
             // After reaching the new_line reset the counter for the
             // following line.
@@ -87,7 +88,10 @@ static void nb_character_validity(char *map, t_data *data)
         i++;
     }
     if (p_nb != 1 || e_nb != 1 || c_nb < 1)
-        printf("error_5\n");
+    {
+        ft_printf("error_5\n");
+        exit(0);
+    }
     data->collectibles_number = c_nb;
     data->exit_flag = 0;
     data->exit_win_flag = 0;
@@ -105,7 +109,7 @@ static void character_validity(char *map)
         if (map[i] != '1' && map[i] != '0' && map[i] != 'C' \
             && map[i] != 'E' && map[i] != 'P' && map[i] != '\n')
         {
-            printf("error_6\n");
+            ft_printf("error_6\n");
             exit (0);
         }
         i++;

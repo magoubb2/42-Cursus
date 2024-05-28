@@ -6,7 +6,7 @@
 /*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 11:30:25 by marbaron          #+#    #+#             */
-/*   Updated: 2024/05/24 14:33:04 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/05/28 12:00:31 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void    side_wall_validity(t_data *data);
 void    path_validity(t_data *data);
 void    put_img_to_window(t_data *data);
 void    xpm_to_image(t_data *data);
-int     key_movement(int keytouch, t_data *data);
+int     key_movement(int keycode, t_data *data);
 void    win(t_data *data);
 int     closed(t_data *data);
 

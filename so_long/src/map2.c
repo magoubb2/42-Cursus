@@ -6,7 +6,7 @@
 /*   By: margueritebaronbeliveau <margueritebaro    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 12:22:48 by margueriteb       #+#    #+#             */
-/*   Updated: 2024/05/24 14:29:08 by margueriteb      ###   ########.fr       */
+/*   Updated: 2024/05/28 12:04:24 by margueriteb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,11 +51,17 @@ void side_wall_validity(t_data *data)
             // check if the first row only contains '1'.
             // Then check if the last row only contains '1'.
             if (data->map[0][x] != '1' || data->map[data->row_number - 1][x] != '1')
-                printf("error_2\n");
+            {
+                ft_printf("error_2\n");
+                exit(0);
+            }
             // Check if the first colum only contains '1'.
             // Then check if the last colum only contains '1'.
             if (data->map[y][0] != '1' || data->map[y][data->colum_number - 1] != '1')
-                printf("error_3\n");
+            {
+                ft_printf("error_3\n");
+                exit(0);
+            }
             x++;
         }
         y++;
@@ -101,25 +107,27 @@ static void player_moves(int next_ppx, int next_ppy, t_data *data)
     }
 }
 
-int key_movement(int keytouch, t_data *data)
+int key_movement(int keycode, t_data *data)
 {
     // Missing escape key.
-    if (keytouch == 13)
+    if (keycode == 53)
+        closed(data);
+    else if (keycode == 13)
     {
         player_moves(-1, 0, data);
         put_img_to_window(data);
     }
-    else if (keytouch == 2)
+    else if (keycode == 2)
     {
         player_moves(0, 1, data);
         put_img_to_window(data);
     }
-    else if (keytouch == 1)
+    else if (keycode == 1)
     {
         player_moves(1, 0, data);
         put_img_to_window(data);
     }
-    else if (keytouch == 0)
+    else if (keycode == 0)
     {
         player_moves(0, -1, data);
         put_img_to_window(data);
